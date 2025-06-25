@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhlshy2krv8sq"]
+
+[ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
+[ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
+[ext_resource type="PackedScene" uid="uid://bqj10ukgsq55n" path="res://Scenery/house_for_digi_tech.tscn" id="3_lklqb"]
+[ext_resource type="PackedScene" uid="uid://8vhqm6pxiqmy" path="res://Scenery/staircase.tscn" id="4_emh3t"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjqk2"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wjdqg"]
+sky_material = SubResource("ProceduralSkyMaterial_gjqk2")
+
+[sub_resource type="Environment" id="Environment_bex3r"]
+background_mode = 2
+sky = SubResource("Sky_wjdqg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jpry0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4vo"]
+albedo_texture = ExtResource("1_vgs3f")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ik7mk"]
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bex3r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+shape = SubResource("BoxShape3D_jpry0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7l4vo")
+mesh = SubResource("BoxMesh_ik7mk")
+
+[node name="Player" parent="." instance=ExtResource("2_gxwfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75475, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.737124, 0.503352, -0.450871, 0, 0.667209, 0.744871, 0.675757, -0.549062, 0.491816, 0, 6.20484, 0)
+shadow_enabled = true
+
+[node name="House For Digi Tech" parent="." instance=ExtResource("3_lklqb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.75052, -14.8663)
+
+[node name="Staircase" parent="." instance=ExtResource("4_emh3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.23078, -8.92906, -1.26427, -15.9654)
