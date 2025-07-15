@@ -53,4 +53,10 @@ shadow_enabled = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.75052, -14.8663)
 
 [node name="Staircase" parent="." instance=ExtResource("4_emh3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.23078, -8.92906, -1.26427, -15.9654)
+transform = Transform3D(0.47537, 0, 0, 0, 0.45483, 0, 0, 0, 1.23078, -9.7839, -4.13668, -15.9654)
+
+[node name="Staircase2" parent="." instance=ExtResource("4_emh3t")]
+transform = Transform3D(0.696536, 0, 0, 0, 1.32296, 0, 0, 0, 1.23054, -7.17801, -4.81276, -15.9537)
+
+[node name="Staircase3" parent="." instance=ExtResource("4_emh3t")]
+transform = Transform3D(0.696536, 0, 0, 0, 1.32296, 0, 0, 0, 1.23054, -9.36767, -2.39599, -15.9537)
