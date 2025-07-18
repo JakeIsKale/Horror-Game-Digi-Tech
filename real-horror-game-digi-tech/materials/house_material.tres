@@ -1,6 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5o3kckmwtxmu"]
-
-[ext_resource type="Texture2D" uid="uid://7lng2w1tcxf1" path="res://Textures/carpet.jpg" id="1_maqha"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5o3kckmwtxmu"]
 
 [resource]
-albedo_texture = ExtResource("1_maqha")
+uv1_scale = Vector3(16, 16, 2)
