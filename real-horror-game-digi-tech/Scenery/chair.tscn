@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnnqlijlk1d2n"]
+
+[ext_resource type="Texture2D" uid="uid://b0y8dxk4ky7p5" path="res://Textures/stone.jpg" id="1_45if8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmqtq"]
+albedo_texture = ExtResource("1_45if8")
+uv1_scale = Vector3(2, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wa8uk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4amce"]
+size = Vector3(0.859497, 2.0293, 1.02881)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.17845, 0, 0, 0, 0.145497, 0, 0, 0, 1.09765, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.45777e-08, -0.145497, 0, 0.791046, -6.35988e-09, 0, 0, 0, 1.2857, -0.417688, 0.810153, 0)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.173004, 0, 0, 0, 0.816152, 0, 0, 0, 0.179952, 0.444056, -0.450215, 0.414685)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.173004, 0, 0, 0, 0.816152, 0, 0, 0, 0.179952, 0.444056, -0.450215, -0.406922)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.173004, 0, 0, 0, 1.49089, 0, 0, 0, 0.179952, -0.447722, -0.17116, 0.419959)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.173004, 0, 0, 0, 1.49089, 0, 0, 0, 0.179952, -0.447722, -0.17116, -0.401648)
+material_override = SubResource("StandardMaterial3D_fmqtq")
+mesh = SubResource("BoxMesh_wa8uk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.0227051, -0.514648, -0.0288086)
+shape = SubResource("BoxShape3D_4amce")
