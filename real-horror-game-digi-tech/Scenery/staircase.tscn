@@ -1,4 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://8vhqm6pxiqmy"]
+[gd_scene load_steps=7 format=4 uid="uid://8vhqm6pxiqmy"]
+
+[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_aqaqq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hpgq"]
+albedo_texture = ExtResource("1_aqaqq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ifqp"]
 resource_name = "Material"
@@ -45,6 +50,7 @@ points = PackedVector3Array(1.01587, -0.603001, -1.01587, -0.698264, 1.01587, 1.
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.7229, 0, 0, 0, 1.82218, 0, 0, 0, 1, 0.698913, 0, 0)
+material_override = SubResource("StandardMaterial3D_8hpgq")
 mesh = SubResource("ArrayMesh_4xv82")
 skeleton = NodePath("")
 
