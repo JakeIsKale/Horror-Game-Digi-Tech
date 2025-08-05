@@ -33,7 +33,7 @@ albedo_texture = ExtResource("1_gng7d")
 albedo_texture = ExtResource("3_51s3y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bi0po"]
-size = Vector3(1, 1.07843, 1.17189)
+size = Vector3(3.31067, 1.52432, 1.44422)
 
 [node name="Couch" type="Node3D"]
 
@@ -80,5 +80,5 @@ mesh = SubResource("SphereMesh_jrm47")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363373, 0.0915703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0131226, 0.619675, 0.046101)
 shape = SubResource("BoxShape3D_bi0po")

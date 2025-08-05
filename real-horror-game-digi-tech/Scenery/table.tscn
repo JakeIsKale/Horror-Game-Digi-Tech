@@ -9,7 +9,7 @@ uv1_scale = Vector3(2, 2, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_wa8uk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4amce"]
-size = Vector3(0.859497, 3.01416, 1.47742)
+size = Vector3(0.882385, 3.01416, 1.20163)
 
 [node name="Node3D" type="Node3D"]
 
@@ -41,5 +41,5 @@ mesh = SubResource("BoxMesh_wa8uk")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.0227051, -0.0222172, -0.0609134)
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, -0.0230714, -0.0222172, -0.0262751)
 shape = SubResource("BoxShape3D_4amce")
