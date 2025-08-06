@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=4 uid="uid://cw5qey3u7jlkg"]
+[gd_scene load_steps=29 format=4 uid="uid://cw5qey3u7jlkg"]
 
-[ext_resource type="Texture2D" uid="uid://b6fwwgv1vqeg5" path="res://Textures/metal fridge texture 1.jpg" id="1_ugt1h"]
-[ext_resource type="Texture2D" uid="uid://bnerg46c138b2" path="res://Textures/fridge texture 2.jpg" id="2_0ere4"]
+[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_33agv"]
+[ext_resource type="Texture2D" uid="uid://svpx4j26so3s" path="res://Textures/wood broken.PNG" id="2_jb3f0"]
+[ext_resource type="Texture2D" uid="uid://dekfcexj1cdrn" path="res://Textures/flat-lay-metal-surface.jpg" id="3_3o07j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww05x"]
-albedo_texture = ExtResource("1_ugt1h")
+albedo_texture = ExtResource("1_33agv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg6tm"]
 resource_name = "Material"
@@ -45,8 +46,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qh06t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfbbj"]
-albedo_texture = ExtResource("2_0ere4")
-uv1_scale = Vector3(-10, 1, 3)
+albedo_texture = ExtResource("2_jb3f0")
+uv1_scale = Vector3(-5, 2, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl8cx"]
 
@@ -112,11 +113,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ukajl")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqtkj"]
-albedo_texture = ExtResource("2_0ere4")
-metallic = 1.0
-metallic_specular = 0.0
-roughness = 0.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osjvb"]
+albedo_texture = ExtResource("3_3o07j")
+metallic = 0.49
+metallic_specular = 1.0
+roughness = 0.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoby7"]
 
@@ -254,6 +255,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qmwjb")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oubrr"]
+size = Vector3(2.36493, 8.15703, 4.85718)
+
 [node name="Fridge" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
@@ -269,31 +273,37 @@ mesh = SubResource("ArrayMesh_akrq0")
 skeleton = NodePath("")
 
 [node name="Cube_002" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.278427, 0, 0, 0, 3.7435, 0, 0, 0, 1.03562, 0.932784, 0.044693, 1.04215)
+transform = Transform3D(0.278427, 0, 0, 0, -3.7435, 9.05368e-08, 0, -3.27267e-07, -1.03562, 0.932784, 0.044693, 1.04215)
 material_override = SubResource("StandardMaterial3D_yfbbj")
 mesh = SubResource("ArrayMesh_mdwod")
 skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.127073, 0, 0, 0, -0.146868, -0.147207, 0, 0, 1.25397, 0, -0.372215)
-material_overlay = SubResource("StandardMaterial3D_hqtkj")
+material_override = SubResource("StandardMaterial3D_osjvb")
 mesh = SubResource("ArrayMesh_qbpqe")
 skeleton = NodePath("")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.127073, 0, 0, 0, -0.146868, -0.147207, 0, 0, 1.25397, 0, 0.39232)
-material_overlay = SubResource("StandardMaterial3D_hqtkj")
+material_override = SubResource("StandardMaterial3D_osjvb")
 mesh = SubResource("ArrayMesh_cxfii")
 skeleton = NodePath("")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.0657303, 0, 0, 0, -0.178591, -0.179003, 0, 0, 1.42817, 0, 0.39232)
-material_overlay = SubResource("StandardMaterial3D_hqtkj")
+material_override = SubResource("StandardMaterial3D_osjvb")
 mesh = SubResource("ArrayMesh_4gvwi")
 skeleton = NodePath("")
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0.0657303, 0, 0, 0, -0.178591, -0.179003, 0, 0, 1.42817, 0, -0.374565)
-material_overlay = SubResource("StandardMaterial3D_hqtkj")
+material_override = SubResource("StandardMaterial3D_osjvb")
 mesh = SubResource("ArrayMesh_bjjaq")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175751, -0.0646591, -0.041626)
+shape = SubResource("BoxShape3D_oubrr")
