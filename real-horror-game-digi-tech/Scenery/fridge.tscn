@@ -258,7 +258,7 @@ shadow_mesh = SubResource("ArrayMesh_qmwjb")
 [sub_resource type="BoxShape3D" id="BoxShape3D_oubrr"]
 size = Vector3(2.36493, 8.15703, 4.85718)
 
-[node name="Fridge" type="Node3D"]
+[node name="Closet" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.914768, 0, 0, 0, 3.99628, 0, 0, 0, 2.3749, 0, 0, 0)
