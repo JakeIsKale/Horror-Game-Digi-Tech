@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhlshy2krv8sq"]
+[gd_scene load_steps=28 format=3 uid="uid://dhlshy2krv8sq"]
 
 [ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
 [ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjl6ifmbwwof" path="res://Scenery/Skull painting 2.png" id="10_qf4y8"]
 [ext_resource type="Texture2D" uid="uid://d3ixh5h408fpc" path="res://Scenery/Mountain Painting 1.png" id="10_so5o0"]
 [ext_resource type="Texture2D" uid="uid://7lng2w1tcxf1" path="res://Textures/carpet.jpg" id="13_00ujl"]
+[ext_resource type="PackedScene" uid="uid://dr6ih8kdg4kst" path="res://glb_models/bed.tscn" id="14_7sw5t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjqk2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -86,7 +87,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.465872, 0, 0, 0, 0.5, -1.23433, 2.75052,
 [node name="Things" type="Node3D" parent="."]
 
 [node name="Staircase2" parent="Things" instance=ExtResource("6_tb5ql")]
-transform = Transform3D(0.745847, 0, 0, 0, 1.21049, 0, 0, 0, 1, -11.035, -2.29858, -12.8282)
+transform = Transform3D(0.8249, 0, 0, 0, 0.950342, 0, 0, 0, 1.52143, -10.9503, -1.826, -12.8255)
+
+[node name="Staircase3" parent="Things" instance=ExtResource("6_tb5ql")]
+transform = Transform3D(0.8249, 0, 0, 0, 0.950342, 0, 0, 0, 1.52143, -7.8486, -4.3334, -12.8255)
 
 [node name="Painting Frame " parent="Things" instance=ExtResource("9_1sqli")]
 transform = Transform3D(-2.0572e-08, 0, 0.375987, 0, 0.367662, 0, -0.470632, 0, -1.64349e-08, -1.58277, 3.53303, -18.1857)
@@ -157,3 +161,6 @@ transform = Transform3D(-2.1836e-07, -4.02717, -4.37114e-08, 0, -1.76033e-07, 1,
 material_override = SubResource("StandardMaterial3D_nusqp")
 mesh = SubResource("QuadMesh_xoo45")
 skeleton = NodePath("../..")
+
+[node name="Bed" parent="." instance=ExtResource("14_7sw5t")]
+transform = Transform3D(-1.58771e-08, 0, 0.351639, 0, 0.30816, 0, -0.363225, 0, -1.53706e-08, -10.0909, 1.35397, -17.028)
