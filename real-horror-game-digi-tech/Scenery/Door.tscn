@@ -1,27 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddpp436st25jr"]
+[gd_scene load_steps=14 format=3 uid="uid://ddpp436st25jr"]
 
 [ext_resource type="Script" path="res://Scenery/door.gd" id="1_ywmrl"]
+[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="2_s1d18"]
+[ext_resource type="Texture2D" uid="uid://b6fwwgv1vqeg5" path="res://Textures/metal fridge texture 1.jpg" id="3_rfn4y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jttft"]
+albedo_color = Color(0.908877, 0.563168, 0.132767, 1)
+albedo_texture = ExtResource("2_s1d18")
 
 [sub_resource type="BoxMesh" id="BoxMesh_jk4ni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ahkw5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc2m1"]
+albedo_color = Color(0.947265, 0.353565, 0, 1)
+albedo_texture = ExtResource("3_rfn4y")
+metallic = 0.58
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_1jpt6"]
 
-[sub_resource type="Animation" id="Animation_a75p7"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hinge:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxru0"]
+albedo_color = Color(0.941233, 0.382195, 0, 1)
+albedo_texture = ExtResource("3_rfn4y")
+metallic = 0.53
 
 [sub_resource type="Animation" id="Animation_gt3g2"]
 length = 0.001
@@ -53,6 +54,21 @@ tracks/0/keys = {
 "values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_a75p7"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kmapp"]
 _data = {
 "RESET": SubResource("Animation_gt3g2"),
@@ -68,6 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866741, 0, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="hinge"]
 transform = Transform3D(1.73189, 0, 0, 0, 2.50201, 0, 0, 0, 0.256402, 0.866741, 0.147402, 0)
+material_override = SubResource("StandardMaterial3D_jttft")
 mesh = SubResource("BoxMesh_jk4ni")
 skeleton = NodePath("../..")
 
@@ -81,16 +98,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866741, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.2, 0, 0, 0, 1.11728e-08, 0.2, 0, -0.255603, 8.74228e-09, 0.640797, 0, 0)
+material_override = SubResource("StandardMaterial3D_hc2m1")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.264857, 0, 0, 0, 2.02272e-09, 0.234492, 0, -0.0462744, 1.025e-08, 0.640797, 0, -0.292063)
+material_override = SubResource("StandardMaterial3D_hc2m1")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.264857, 0, 0, 0, 2.02272e-09, 0.234492, 0, -0.0462744, 1.025e-08, 0.640797, 0, 0.283686)
+material_override = SubResource("StandardMaterial3D_nxru0")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 

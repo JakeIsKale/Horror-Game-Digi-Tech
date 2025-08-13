@@ -285,7 +285,7 @@ data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1,
 [node name="Meshes" type="Node3D" parent="."]
 
 [node name="Cube" type="MeshInstance3D" parent="Meshes"]
-transform = Transform3D(23, 0, 0, 0, 5.5, 0, 0, 0, 15, 0, -0.0868771, 0)
+transform = Transform3D(23, 0, 0, 0, 5.5, 0, 0, 0, 15, 0, -0.087, 0)
 material_override = SubResource("StandardMaterial3D_ernwi")
 mesh = SubResource("ArrayMesh_xl7sj")
 skeleton = NodePath("")
@@ -296,7 +296,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_qch4i")
 
 [node name="Cube_001" type="MeshInstance3D" parent="Meshes"]
-transform = Transform3D(7.18613, 0, 0, 0, 5.15, 0, 0, 0, 6.91376, -14.6019, 0.36029, 7.74059)
+transform = Transform3D(7.18613, 0, 0, 0, 5.15, 0, 0, 0, 6.91376, -14.6019, -0.087, 7.74059)
 material_override = SubResource("StandardMaterial3D_nns6d")
 mesh = SubResource("ArrayMesh_j3goa")
 skeleton = NodePath("")
@@ -306,8 +306,19 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/Cube_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_syyy0")
 
+[node name="Cube_010" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(7.18613, 0, 0, 0, 5.15, 0, 0, 0, 6.91376, -14.6019, -10.961, 7.5729)
+material_override = SubResource("StandardMaterial3D_nns6d")
+mesh = SubResource("ArrayMesh_j3goa")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Meshes/Cube_010"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/Cube_010/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_syyy0")
+
 [node name="Cube_008" type="MeshInstance3D" parent="Meshes"]
-transform = Transform3D(7.18613, 0, 0, 0, 5.15, 0, 0, 0, 6.91376, -14.6019, -10.6257, 7.74059)
+transform = Transform3D(7.18613, 0, 0, 0, 5.15, 0, 0, 0, 6.91376, -14.6019, -0.087, 7.74059)
 material_override = SubResource("StandardMaterial3D_nns6d")
 mesh = SubResource("ArrayMesh_j3goa")
 skeleton = NodePath("")
@@ -400,27 +411,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/Cube_005/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ir14v")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420352, -9.09505)
-omni_range = 12.083
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420352, 5.15582)
-omni_range = 12.083
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9133, 0.420352, 5.15582)
-omni_range = 12.083
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5347, 0.420352, 5.15582)
-omni_range = 12.083
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5347, 0.420352, -9.70613)
-omni_range = 12.083
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7032, 0.420352, -8.10087)
-omni_range = 12.083
