@@ -81,9 +81,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xukh6")
 
-[node name="lightbulb" type="Node3D"]
+[node name="light_bulb" type="Node3D"]
 
-[node name="Sphere" type="MeshInstance3D" parent="."]
+[node name="light" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_mpulx")
 mesh = SubResource("ArrayMesh_25yyt")
 skeleton = NodePath("")

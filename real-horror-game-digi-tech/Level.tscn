@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhlshy2krv8sq"]
+[gd_scene load_steps=31 format=3 uid="uid://dhlshy2krv8sq"]
 
 [ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
 [ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dr6ih8kdg4kst" path="res://glb_models/bed.tscn" id="14_7sw5t"]
 [ext_resource type="PackedScene" uid="uid://ddpp436st25jr" path="res://Scenery/Door.tscn" id="15_1p2xo"]
 [ext_resource type="PackedScene" uid="uid://be5i0ksxa6rqi" path="res://Scenery/lightbulb.tscn" id="16_5w606"]
+[ext_resource type="PackedScene" uid="uid://b3wqur5o2u42c" path="res://Scenery/lightswitch.tscn" id="17_5tgk1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjqk2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -219,3 +220,6 @@ transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e
 
 [node name="Door5" parent="Doors" instance=ExtResource("15_1p2xo")]
 transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e-08, -5.08075, -3.07595, -8.38972)
+
+[node name="lightswitch" parent="." instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-0.578853, 0, -4.43429e-08, 0, 0.533847, 0, 5.0605e-08, 0, -0.507224, -1.31458, 2.36733, -5.2569)
