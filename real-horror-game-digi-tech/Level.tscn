@@ -27,9 +27,15 @@ sky_material = SubResource("ProceduralSkyMaterial_gjqk2")
 
 [sub_resource type="Environment" id="Environment_bex3r"]
 background_mode = 2
+background_color = Color(0.105131, 0.136807, 0.138079, 1)
 sky = SubResource("Sky_wjdqg")
 tonemap_mode = 2
-glow_enabled = true
+fog_enabled = true
+fog_density = 0.04
+fog_sky_affect = 0.326
+fog_height = 1024.0
+fog_height_density = -16.0
+volumetric_fog_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpry0"]
 
@@ -213,7 +219,7 @@ transform = Transform3D(1.03028, 0, 0, 0, 1.29007, 0, 0, 0, 0.986901, -6.99046, 
 transform = Transform3D(1.03028, 0, 0, 0, 1.29007, 0, 0, 0, 0.986901, -6.19272, -2.97999, -14.5045)
 
 [node name="Door3" parent="Doors" instance=ExtResource("15_1p2xo")]
-transform = Transform3D(0.973933, 0, 0, 0, 1.14327, 0, 0, 0, 1, 0.151345, 1.94203, -4.38214)
+transform = Transform3D(0.973933, 0, 0, 0, 1.14327, 0, 0, 0, 1, 0.148247, 1.94203, -4.36381)
 
 [node name="Door2" parent="Doors" instance=ExtResource("15_1p2xo")]
 transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e-08, -5.08075, 1.98884, -8.35528)
@@ -221,5 +227,6 @@ transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e
 [node name="Door5" parent="Doors" instance=ExtResource("15_1p2xo")]
 transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e-08, -5.08075, -3.07595, -8.38972)
 
-[node name="lightswitch" parent="." instance=ExtResource("17_5tgk1")]
+[node name="lightswitch" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
 transform = Transform3D(-0.578853, 0, -4.43429e-08, 0, 0.533847, 0, 5.0605e-08, 0, -0.507224, -1.31458, 2.36733, -5.2569)
+lights = NodePath("../Lights")

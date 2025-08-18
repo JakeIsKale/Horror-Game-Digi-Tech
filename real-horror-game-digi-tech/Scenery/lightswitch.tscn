@@ -29,10 +29,11 @@ mesh = SubResource("BoxMesh_lrrr7")
 
 [node name="on" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.304249, 0, 0, 0, -0.26133, -0.179105, 0, 0.271382, -0.172471, 0, -0.0275681, 0.162197)
+visible = false
 mesh = SubResource("BoxMesh_lrrr7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="lightswitch" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightswitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0178195, 0, 0.0747681)
 shape = SubResource("BoxShape3D_jy2yv")
