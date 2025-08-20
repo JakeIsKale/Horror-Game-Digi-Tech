@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhlshy2krv8sq"]
+[gd_scene load_steps=33 format=3 uid="uid://dhlshy2krv8sq"]
 
 [ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
 [ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://ddpp436st25jr" path="res://Scenery/Door.tscn" id="15_1p2xo"]
 [ext_resource type="PackedScene" uid="uid://be5i0ksxa6rqi" path="res://Scenery/lightbulb.tscn" id="16_5w606"]
 [ext_resource type="PackedScene" uid="uid://b3wqur5o2u42c" path="res://Scenery/lightswitch.tscn" id="17_5tgk1"]
+[ext_resource type="PackedScene" uid="uid://pnkt8ssbc5yb" path="res://Scenery/toilet.tscn" id="18_daja5"]
+[ext_resource type="PackedScene" uid="uid://wydxn5rqo1lf" path="res://Scenery/shower.tscn" id="19_d4m5l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gjqk2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -114,7 +116,7 @@ transform = Transform3D(0.470632, 0, 0, 0, 0.918064, 0, 0, 0, 1.21516, 9.41091, 
 painting = SubResource("StandardMaterial3D_7tbkt")
 
 [node name="Painting Frame 4" parent="Things" instance=ExtResource("9_1sqli")]
-transform = Transform3D(-0.470632, 0, -6.06388e-08, 0, 0.707457, 0, 4.1144e-08, 0, -0.693627, -11.8561, 3.00302, -8.18694)
+transform = Transform3D(-0.470632, 0, -6.06388e-08, 0, 0.707457, 0, 4.1144e-08, 0, -0.693627, -11.8561, 2.82783, -12.7618)
 painting = SubResource("StandardMaterial3D_pp4da")
 
 [node name="chairs and tables" type="Node3D" parent="."]
@@ -146,7 +148,7 @@ transform = Transform3D(7.50632e-09, 0, -0.413951, 0, 0.381247, 0, 0.629468, 0, 
 transform = Transform3D(6.29144e-09, 0, -0.413951, 0, 0.381247, 0, 0.52759, 0, 4.93632e-09, -6.97788, 2.22747, -17.7956)
 
 [node name="Drawer" parent="Furniture" instance=ExtResource("7_k1l63")]
-transform = Transform3D(-0.555244, 0, -4.60941e-08, 0, 0.613246, 0, 4.8541e-08, 0, -0.527255, -11.2574, 1.41064, -8.24293)
+transform = Transform3D(-2.42705e-08, 0, 0.527255, 0, 0.613246, 0, -0.555244, 0, -2.3047e-08, 6.47101, 1.41064, -17.4093)
 
 [node name="Drawer2" parent="Furniture" instance=ExtResource("7_k1l63")]
 transform = Transform3D(-2.42705e-08, 0, 0.527255, 0, 0.613246, 0, -0.555244, 0, -2.3047e-08, -7.29397, 1.41064, -19.9458)
@@ -230,3 +232,9 @@ transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e
 [node name="lightswitch" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
 transform = Transform3D(-0.578853, 0, -4.43429e-08, 0, 0.533847, 0, 5.0605e-08, 0, -0.507224, -1.31458, 2.36733, -5.2569)
 lights = NodePath("../Lights")
+
+[node name="toilet" parent="." instance=ExtResource("18_daja5")]
+transform = Transform3D(0.518047, 0, 0, 0, 0.427065, 0, 0, 0, 0.452232, -11.0289, 0.670556, -6.15557)
+
+[node name="Shower" parent="." instance=ExtResource("19_d4m5l")]
+transform = Transform3D(-2.2708e-08, 0, -0.478993, 0, 0.462859, 0, 0.519499, 0, -2.09374e-08, -6.82737, 1.40051, -6.20968)
