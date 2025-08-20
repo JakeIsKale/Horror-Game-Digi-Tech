@@ -162,6 +162,12 @@ transform = Transform3D(-1.5, 0, -2.26494e-07, 0, 1.5, 0, 2.26494e-07, 0, -1.5, 
 [node name="Bed" parent="Furniture" instance=ExtResource("14_7sw5t")]
 transform = Transform3D(-1.58771e-08, 0, 0.351639, 0, 0.30816, 0, -0.363225, 0, -1.53706e-08, -10.0909, 1.35397, -17.028)
 
+[node name="toilet" parent="Furniture" instance=ExtResource("18_daja5")]
+transform = Transform3D(0.518047, 0, 0, 0, 0.427065, 0, 0, 0, 0.452232, -11.0289, 0.670556, -6.15557)
+
+[node name="Shower" parent="Furniture" instance=ExtResource("19_d4m5l")]
+transform = Transform3D(-2.2708e-08, 0, -0.478993, 0, 0.462859, 0, 0.519499, 0, -2.09374e-08, -6.82737, 1.40051, -6.20968)
+
 [node name="Rugs" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Rugs"]
@@ -232,9 +238,3 @@ transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e
 [node name="lightswitch" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
 transform = Transform3D(-0.578853, 0, -4.43429e-08, 0, 0.533847, 0, 5.0605e-08, 0, -0.507224, -1.31458, 2.36733, -5.2569)
 lights = NodePath("../Lights")
-
-[node name="toilet" parent="." instance=ExtResource("18_daja5")]
-transform = Transform3D(0.518047, 0, 0, 0, 0.427065, 0, 0, 0, 0.452232, -11.0289, 0.670556, -6.15557)
-
-[node name="Shower" parent="." instance=ExtResource("19_d4m5l")]
-transform = Transform3D(-2.2708e-08, 0, -0.478993, 0, 0.462859, 0, 0.519499, 0, -2.09374e-08, -6.82737, 1.40051, -6.20968)

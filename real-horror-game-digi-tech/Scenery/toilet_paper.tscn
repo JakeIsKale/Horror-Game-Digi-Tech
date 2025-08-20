@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dld5t5c5ua58d"]
+
+[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_qjh73"]
+[ext_resource type="Texture2D" uid="uid://dekfcexj1cdrn" path="res://Textures/flat-lay-metal-surface.jpg" id="2_g6nba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qng07"]
+albedo_color = Color(0.568973, 0.568973, 0.568973, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y881i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in80r"]
+albedo_texture = ExtResource("1_qjh73")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eugh4"]
+albedo_texture = ExtResource("2_g6nba")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ns86s"]
+
+[node name="toilet paper" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -3.12948e-08, -1, 0, 0.715941, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qng07")
+mesh = SubResource("CylinderMesh_y881i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.539898, 0, 0, 0, -3.42108e-08, -0.514045, 0, 0.782652, -2.24696e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_in80r")
+mesh = SubResource("CylinderMesh_y881i")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.187476, 0, 0, 0, 0.188032, 0, 0, 0, 2.06759, 0, 0, 0.00283423)
+material_override = SubResource("StandardMaterial3D_eugh4")
+mesh = SubResource("BoxMesh_ns86s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.19484e-09, 1.64383e-08, 0.66973, 0, 0.188032, -5.85497e-08, 0.187476, -7.18539e-16, -2.92748e-08, 0.244015, 0, 0.94085)
+material_override = SubResource("StandardMaterial3D_eugh4")
+mesh = SubResource("BoxMesh_ns86s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.19484e-09, 1.64383e-08, 0.664979, 0, 0.188032, -5.81343e-08, 0.187476, -7.18539e-16, -2.90672e-08, 0.237926, 0, -0.94036)
+material_override = SubResource("StandardMaterial3D_eugh4")
+mesh = SubResource("BoxMesh_ns86s")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.05694e-08, 2.26078e-08, 0.0887582, 0, 0.258603, -7.75949e-09, 0.241799, -9.88218e-16, -3.87974e-09, 0.574772, 0, -0.935224)
+material_override = SubResource("StandardMaterial3D_eugh4")
+mesh = SubResource("BoxMesh_ns86s")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.095e-08, 2.08723e-08, 0.0887582, 0, 0.238751, -7.75949e-09, 0.250506, -9.12356e-16, -3.87974e-09, 0.574772, 0, 0.949045)
+material_override = SubResource("StandardMaterial3D_eugh4")
+mesh = SubResource("BoxMesh_ns86s")
