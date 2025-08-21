@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://die1140xkot1d"]
+[gd_scene load_steps=14 format=4 uid="uid://die1140xkot1d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kyd2"]
 
@@ -136,6 +136,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rxlv6")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w78gd"]
+size = Vector3(2.36707, 2.48584, 3.21637)
+
 [node name="towel" type="Node3D"]
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
@@ -157,3 +160,9 @@ skeleton = NodePath("")
 transform = Transform3D(0.246758, 0, 0, 0, 1.07728, 0, 0, 0, 1, 0.569126, -0.723989, 0)
 mesh = SubResource("ArrayMesh_fi45a")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.683533, -0.74292, 0.0180359)
+shape = SubResource("BoxShape3D_w78gd")

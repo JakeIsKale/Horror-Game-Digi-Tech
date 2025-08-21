@@ -1,11 +1,10 @@
-[gd_scene load_steps=43 format=4 uid="uid://c5wou4wejkjob"]
+[gd_scene load_steps=42 format=4 uid="uid://c5wou4wejkjob"]
 
 [ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_p221g"]
 [ext_resource type="Texture2D" uid="uid://b0y8dxk4ky7p5" path="res://Textures/stone.jpg" id="2_25k6o"]
-[ext_resource type="Texture2D" uid="uid://svpx4j26so3s" path="res://Textures/wood broken.PNG" id="3_kri88"]
 [ext_resource type="Texture2D" uid="uid://dekfcexj1cdrn" path="res://Textures/flat-lay-metal-surface.jpg" id="4_c10p4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wm1yk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwmth"]
 albedo_texture = ExtResource("1_p221g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwx5k"]
@@ -186,8 +185,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o3sr0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udgqy"]
-albedo_color = Color(0.576109, 0.545697, 0.439494, 1)
-albedo_texture = ExtResource("3_kri88")
+albedo_texture = ExtResource("1_p221g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj6dh"]
 resource_name = "Material.003"
@@ -228,6 +226,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_02qvo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no3ln"]
+albedo_color = Color(0.99558, 0.99558, 0.99558, 1)
 albedo_texture = ExtResource("4_c10p4")
 metallic = 1.0
 roughness = 0.5
@@ -409,11 +408,11 @@ shadow_mesh = SubResource("ArrayMesh_q6w62")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xtl1r"]
 size = Vector3(1, 2.22302, 5.21152)
 
-[node name="Drawer" type="Node3D"]
+[node name="Drawer2" type="Node3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.16643, 0, 0, 0, 0.768029, 0, 0, 0, 2.53451, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_wm1yk")
+material_override = SubResource("StandardMaterial3D_pwmth")
 mesh = SubResource("ArrayMesh_x2igs")
 skeleton = NodePath("")
 

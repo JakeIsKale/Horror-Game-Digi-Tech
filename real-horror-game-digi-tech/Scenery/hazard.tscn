@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://b74odlsa4tlft"]
+
+[ext_resource type="Texture2D" uid="uid://b78c8ier2pa0" path="res://Textures/Metal046B_2K-PNG/Metal046B_2K-PNG_Displacement.png" id="1_8curu"]
+[ext_resource type="Texture2D" uid="uid://cvt6ss6fmmh6s" path="res://Textures/Metal046B_2K-PNG/Metal046B_2K-PNG_Roughness.png" id="2_nr04u"]
+[ext_resource type="Texture2D" uid="uid://drb8muuscqxwi" path="res://Textures/Metal046B_2K-PNG/Metal046B_2K-PNG_Metalness.png" id="3_5gik4"]
+[ext_resource type="Texture2D" uid="uid://dn3p8y8k834nn" path="res://Textures/Hazard.png" id="4_e5ftx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj11p"]
+albedo_texture = ExtResource("1_8curu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kyqml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u861c"]
+albedo_texture = ExtResource("2_nr04u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps4vb"]
+albedo_texture = ExtResource("3_5gik4")
+
+[node name="Hazard" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.3502, 0, 0, 0, 1.47093, 0, 0, 0, 0.282228, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xj11p")
+mesh = SubResource("BoxMesh_kyqml")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.24242, 0, 0, 0, 1.3448, 0, 0, 0, 0.0629191, 0, 0, 0.140305)
+material_override = SubResource("StandardMaterial3D_u861c")
+mesh = SubResource("BoxMesh_kyqml")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0745064, 0, 0, 0, 0.299109, 0, 0, 0, 0.0629191, -0.484697, 0, 0.197796)
+material_override = SubResource("StandardMaterial3D_ps4vb")
+mesh = SubResource("BoxMesh_kyqml")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00767748, -0.05225, 0.16501)
+size = Vector3(1.11237, 0.638428, 1.68439)
+texture_albedo = ExtResource("4_e5ftx")

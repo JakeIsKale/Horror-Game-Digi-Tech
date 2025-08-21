@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b15rqtjp2f46a"]
+
+[ext_resource type="PackedScene" uid="uid://4scq3ugqnjyb" path="res://glb_models/TV.blend" id="1_ludsj"]
+
+[node name="TV" instance=ExtResource("1_ludsj")]

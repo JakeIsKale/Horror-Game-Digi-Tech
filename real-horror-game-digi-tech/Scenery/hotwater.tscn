@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://7ijldidumof3"]
+
+[ext_resource type="Texture2D" uid="uid://dtfvirwq8u1ol" path="res://Textures/Metal046B_2K-PNG/Metal046B.png" id="1_dted4"]
+[ext_resource type="Texture2D" uid="uid://bjh2iptmatl8t" path="res://Textures/Water pic.png" id="2_p8iuc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4v1q"]
+albedo_texture = ExtResource("1_dted4")
+roughness = 0.45
+heightmap_enabled = true
+heightmap_scale = 0.0
+uv1_scale = Vector3(2, 2, 0.668)
+uv2_scale = Vector3(0, 0, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xka3m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pn1en"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gcgb2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sogbm"]
+size = Vector3(2.07288, 2.47467, 1.53394)
+
+[node name="hotwater" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2745, 0, 0, 0, 1, 0, 0, 0, 1.23899, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_h4v1q")
+lod_bias = 0.001
+mesh = SubResource("CylinderMesh_xka3m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.42996, 0, 0, 0, 0.20019, 0, 0, 0, 1.47202, 0, 1.01349, 0)
+mesh = SubResource("CylinderMesh_xka3m")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.42996, 0, 0, 0, 0.191819, 0, 0, 0, 1.47202, 0, -1.02226, 0)
+mesh = SubResource("CylinderMesh_xka3m")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.333867, 0, 0, 0, 0.303797, 0, 0, 0, 0.178815, 0, 0, 0.639557)
+mesh = SubResource("BoxMesh_pn1en")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.295e-09, -0.515585, 0, -7.295e-09, 9.85122e-16, -0.145861, 0.16689, -2.2537e-08, -6.37577e-09, -0.601463, 0.00436059, 0.605208)
+mesh = SubResource("CylinderMesh_gcgb2")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.650942, -1.12192e-08, -0.0221102)
+size = Vector3(1.33892, 1.21673, 2)
+texture_albedo = ExtResource("2_p8iuc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.274109, -0.00674438, -0.0135498)
+shape = SubResource("BoxShape3D_sogbm")
