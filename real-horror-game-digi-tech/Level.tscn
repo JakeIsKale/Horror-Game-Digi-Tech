@@ -298,15 +298,6 @@ transform = Transform3D(0.146212, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -1.52923
 [node name="lightbulb3" parent="Lights" instance=ExtResource("16_5w606")]
 transform = Transform3D(0.146212, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.52053, 5.27893, -8.73245)
 
-[node name="lightbulb4" parent="Lights" instance=ExtResource("16_5w606")]
-transform = Transform3D(0.146212, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.44971, 5.27893, -15.0384)
-
-[node name="lightbulb5" parent="Lights" instance=ExtResource("16_5w606")]
-transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -8.51265, 5.27893, -16.2557)
-
-[node name="lightbulb7" parent="Lights" instance=ExtResource("16_5w606")]
-transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -8.51265, 0.0575473, -16.2557)
-
 [node name="lightbulb8" parent="Lights" instance=ExtResource("16_5w606")]
 transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -8.51265, 0.0575473, -8.1613)
 
@@ -315,9 +306,6 @@ transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 6.05564,
 
 [node name="lightbulb10" parent="Lights" instance=ExtResource("16_5w606")]
 transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 6.05564, 0.0789948, -13.9183)
-
-[node name="lightbulb6" parent="Lights" instance=ExtResource("16_5w606")]
-transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -9.40528, 5.27893, -9.37345)
 
 [node name="Doors" type="Node3D" parent="."]
 
@@ -346,11 +334,72 @@ transform = Transform3D(-4.37203e-08, 0, 1, 0, 1.16912, 0, -1.0002, 0, -4.37114e
 transform = Transform3D(-0.578853, 0, -4.43429e-08, 0, 0.533847, 0, 5.0605e-08, 0, -0.507224, -1.31458, 2.36733, -5.2569)
 lights = NodePath("../Lights")
 
+[node name="lightswitch2" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-2.53025e-08, 0, -0.507224, 0, 0.533847, 0, 0.578853, 0, -2.21715e-08, -5.26936, 2.36733, -9.60573)
+lights = NodePath("../Lights2")
+
+[node name="lightswitch3" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-0.578853, 0, 4.43429e-08, 0, 0.533847, 0, -5.06049e-08, 0, -0.507224, 4.99416, 2.36733, -11.7933)
+lights = NodePath("../Lights3")
+
+[node name="lightswitch4" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-0.578853, 0, 4.43429e-08, 0, 0.533847, 0, -5.06049e-08, 0, -0.507224, -5.75328, 2.36733, -11.3764)
+lights = NodePath("../Lights4")
+
+[node name="lightswitch5" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-2.53025e-08, 0, -0.507224, 0, 0.533847, 0, 0.578853, 0, -2.21715e-08, -5.97937, 2.36733, -15.0966)
+lights = NodePath("../Lights5")
+
+[node name="lightswitch6" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-2.53025e-08, 0, -0.507224, 0, 0.533847, 0, 0.578853, 0, -2.21715e-08, -5.06803, -2.85565, -15.9912)
+lights = NodePath("../Lights6")
+
+[node name="lightswitch7" parent="." node_paths=PackedStringArray("lights") instance=ExtResource("17_5tgk1")]
+transform = Transform3D(-0.578853, 0, 4.43429e-08, 0, 0.533847, 0, -5.06049e-08, 0, -0.507224, -5.06803, -2.85565, -11.4464)
+lights = NodePath("../Lights7")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12809, -9.8755)
-omni_range = 200.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39558, 2.12809, -12.9329)
+omni_range = 4096.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229463, 2.12809, -12.9329)
+omni_range = 4096.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.61172, 0, 0, 0, 4.62591, 0, 0, 0, 0.336257, 7.1298, -2.14234, -15.5328)
 material_override = SubResource("StandardMaterial3D_tiwit")
 mesh = SubResource("BoxMesh_pd1fs")
+
+[node name="Lights2" type="Node3D" parent="."]
+
+[node name="lightbulb6" parent="Lights2" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -9.40528, 5.01934, -9.37345)
+
+[node name="Lights3" type="Node3D" parent="."]
+
+[node name="lightbulb4" parent="Lights3" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.146212, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.44971, 5.01934, -15.0384)
+
+[node name="Lights4" type="Node3D" parent="."]
+
+[node name="lightbulb4" parent="Lights4" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.146212, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -9.39949, 5.01934, -12.9279)
+
+[node name="Lights5" type="Node3D" parent="."]
+
+[node name="lightbulb5" parent="Lights5" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -8.51265, 5.01934, -16.2557)
+
+[node name="Lights6" type="Node3D" parent="."]
+
+[node name="lightbulb7" parent="Lights6" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.12933, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -8.51265, -0.202046, -16.2557)
+
+[node name="Lights7" type="Node3D" parent="."]
+
+[node name="lightbulb11" parent="Lights7" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -0.825854, -0.202046, -14.9306)
+
+[node name="lightbulb12" parent="Lights7" instance=ExtResource("16_5w606")]
+transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.98093, -0.202046, -8.11562)
