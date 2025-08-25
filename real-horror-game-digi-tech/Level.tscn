@@ -360,10 +360,12 @@ lights = NodePath("../Lights7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39558, 2.12809, -12.9329)
+visible = false
 omni_range = 4096.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229463, 2.12809, -12.9329)
+visible = false
 omni_range = 4096.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
