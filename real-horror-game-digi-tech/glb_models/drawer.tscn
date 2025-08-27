@@ -1,12 +1,13 @@
-[gd_scene load_steps=48 format=4 uid="uid://c5wou4wejkjob"]
+[gd_scene load_steps=50 format=4 uid="uid://c5wou4wejkjob"]
 
-[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_p221g"]
+[ext_resource type="Texture2D" uid="uid://bbeo24kc7xnv1" path="res://Textures/Planks039_2K-PNG/Planks039_2K-PNG_Color.png" id="1_lea8h"]
 [ext_resource type="Texture2D" uid="uid://b0y8dxk4ky7p5" path="res://Textures/stone.jpg" id="2_25k6o"]
 [ext_resource type="Script" path="res://Scenery/door.gd" id="3_wcw8x"]
 [ext_resource type="Texture2D" uid="uid://dekfcexj1cdrn" path="res://Textures/flat-lay-metal-surface.jpg" id="4_c10p4"]
+[ext_resource type="Texture2D" uid="uid://ctd2xbx4e6obc" path="res://Textures/WoodFloor052_2K-PNG/WoodFloor052_2K-PNG_AmbientOcclusion.png" id="4_j884p"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwmth"]
-albedo_texture = ExtResource("1_p221g")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vb44r"]
+albedo_texture = ExtResource("1_lea8h")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwx5k"]
 resource_name = "Material"
@@ -185,8 +186,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o3sr0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udgqy"]
-albedo_texture = ExtResource("1_p221g")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oekmc"]
+albedo_texture = ExtResource("4_j884p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj6dh"]
 resource_name = "Material.003"
@@ -303,21 +304,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8wmjg")
 
-[sub_resource type="Animation" id="Animation_4o7ma"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.50519, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_68snd"]
 length = 0.001
 tracks/0/type = "value"
@@ -333,11 +319,29 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_4o7ma"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.50519, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yprb8"]
 _data = {
 "RESET": SubResource("Animation_68snd"),
 "open": SubResource("Animation_4o7ma")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amm8i"]
+albedo_texture = ExtResource("4_j884p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nugk5"]
 resource_name = "Material.004"
@@ -455,7 +459,7 @@ size = Vector3(2.1283, 2.22302, 5.21152)
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.16643, 0, 0, 0, 0.768029, 0, 0, 0, 2.53451, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_pwmth")
+material_override = SubResource("StandardMaterial3D_vb44r")
 mesh = SubResource("ArrayMesh_x2igs")
 skeleton = NodePath("")
 
@@ -488,7 +492,7 @@ script = ExtResource("3_wcw8x")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Drawerleft"]
 transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, -1.25238)
-material_override = SubResource("StandardMaterial3D_udgqy")
+material_override = SubResource("StandardMaterial3D_oekmc")
 mesh = SubResource("ArrayMesh_ot35q")
 skeleton = NodePath("")
 
@@ -519,7 +523,7 @@ script = ExtResource("3_wcw8x")
 
 [node name="Cube_004" type="MeshInstance3D" parent="Drawerright"]
 transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, 1.25773)
-material_override = SubResource("StandardMaterial3D_udgqy")
+material_override = SubResource("StandardMaterial3D_amm8i")
 mesh = SubResource("ArrayMesh_3nqix")
 skeleton = NodePath("")
 

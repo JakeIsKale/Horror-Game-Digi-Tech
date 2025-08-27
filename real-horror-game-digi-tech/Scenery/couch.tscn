@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlpl4r6w76q5"]
+[gd_scene load_steps=16 format=3 uid="uid://dlpl4r6w76q5"]
 
 [ext_resource type="Texture2D" uid="uid://bbyk4yxhva6k8" path="res://Textures/pngtree-texture-of-brown-fabric-cloth-upholstery-on-a-sofa-or-headboard-image_13805317 - Copy.png" id="1_gng7d"]
-[ext_resource type="Texture2D" uid="uid://d0jl3wnv38igp" path="res://Textures/—Pngtree—a close-up of black leather_15884188.png" id="2_tf3ga"]
-[ext_resource type="Texture2D" uid="uid://dgw0mr3rkl81w" path="res://Textures/pngtree-texture-of-brown-fabric-cloth-upholstery-on-a-sofa-or-headboard-image_13805317.png" id="3_51s3y"]
+[ext_resource type="Texture2D" uid="uid://26cu785w3lco" path="res://Textures/Fabric077_2K-PNG/Fabric077_2K-PNG_Roughness.png" id="2_tjoy2"]
+[ext_resource type="Texture2D" uid="uid://d3ej6db633xqj" path="res://Textures/Fabric077_2K-PNG/Fabric077_2K-PNG_Displacement.png" id="3_mx234"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4i58r"]
 albedo_texture = ExtResource("1_gng7d")
@@ -20,17 +20,22 @@ uv1_scale = Vector3(-3, -1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dklws"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7ap0"]
-albedo_texture = ExtResource("2_tf3ga")
-uv1_scale = Vector3(3, -3, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_icnc5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pesa7"]
 albedo_texture = ExtResource("1_gng7d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm2fk"]
+albedo_texture = ExtResource("2_tjoy2")
 
 [sub_resource type="SphereMesh" id="SphereMesh_jrm47"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixyik"]
-albedo_texture = ExtResource("3_51s3y")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkuo1"]
+albedo_texture = ExtResource("2_tjoy2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auixf"]
+albedo_texture = ExtResource("3_mx234")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njr2x"]
+albedo_texture = ExtResource("3_mx234")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bi0po"]
 size = Vector3(3.31067, 1.52432, 1.44422)
@@ -54,27 +59,27 @@ mesh = SubResource("BoxMesh_dklws")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.77448, 0, 0, 0, -8.17722e-09, -1, 0, 0.187073, -4.37114e-08, 0, 0.329208, 0.580747)
-material_override = SubResource("StandardMaterial3D_n7ap0")
+material_override = SubResource("StandardMaterial3D_pesa7")
 mesh = SubResource("BoxMesh_dklws")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.47693, 0, 0, 0, 0.515832, 0, 0, 0, 1.25284, -0.647626, 0.248221, 0)
-material_override = SubResource("StandardMaterial3D_icnc5")
+material_override = SubResource("StandardMaterial3D_fm2fk")
 mesh = SubResource("SphereMesh_jrm47")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.47693, 0, 0, 0, 0.515832, 0, 0, 0, 1.25284, 0.626747, 0.248221, 0)
-material_override = SubResource("StandardMaterial3D_icnc5")
+material_override = SubResource("StandardMaterial3D_xkuo1")
 mesh = SubResource("SphereMesh_jrm47")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.66745, 0, 0, 0, -2.25477e-08, -1.35147, 0, 0.515832, -5.90744e-08, -0.675639, 0.38115, 0.381776)
-material_override = SubResource("StandardMaterial3D_ixyik")
+material_override = SubResource("StandardMaterial3D_auixf")
 mesh = SubResource("SphereMesh_jrm47")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.66745, 0, 0, 0, -2.25477e-08, -1.35147, 0, 0.515832, -5.90744e-08, 0.648389, 0.38115, 0.381776)
-material_override = SubResource("StandardMaterial3D_ixyik")
+material_override = SubResource("StandardMaterial3D_njr2x")
 mesh = SubResource("SphereMesh_jrm47")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

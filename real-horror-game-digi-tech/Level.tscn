@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dhlshy2krv8sq"]
+[gd_scene load_steps=60 format=3 uid="uid://dhlshy2krv8sq"]
 
 [ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
 [ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
@@ -29,7 +29,12 @@
 [ext_resource type="PackedScene" uid="uid://rd0yuwqsjd6k" path="res://Scenery/counter.tscn" id="26_acnj1"]
 [ext_resource type="PackedScene" uid="uid://ctkjw0gloxgnr" path="res://Scenery/fridge_11.tscn" id="27_lj23d"]
 [ext_resource type="PackedScene" uid="uid://c81drwadbvaw5" path="res://Scenery/oven.tscn" id="28_opqm7"]
-[ext_resource type="Texture2D" uid="uid://b4nexvpuydb1u" path="res://Textures/Cardboard001_2K-PNG/Cardboard001_2K-PNG_Displacement.png" id="30_qyxfi"]
+[ext_resource type="Texture2D" uid="uid://bbu0drjayvif6" path="res://Textures/WoodFloor052_2K-PNG/WoodFloor052_2K-PNG_Color.png" id="31_bajsd"]
+[ext_resource type="Texture2D" uid="uid://qd5jckyqsvw3" path="res://Textures/Tiles133D_2K-PNG/Tiles133D_2K-PNG_Color.png" id="32_gtudn"]
+[ext_resource type="Texture2D" uid="uid://bbeo24kc7xnv1" path="res://Textures/Planks039_2K-PNG/Planks039_2K-PNG_Color.png" id="33_6l3kf"]
+[ext_resource type="PackedScene" uid="uid://clyt6u3q578qk" path="res://Scenery/doorbell.tscn" id="34_4oomu"]
+[ext_resource type="PackedScene" uid="uid://dggdbyres7g5d" path="res://Scenery/blood_decal.tscn" id="35_q7hen"]
+[ext_resource type="Texture2D" uid="uid://f4umqbak4eul" path="res://Textures/Concrete044A_2K-PNG/Concrete044A_2K-PNG_Color.png" id="35_vdcsx"]
 
 [sub_resource type="Gradient" id="Gradient_fiqlk"]
 offsets = PackedFloat32Array(0, 0.433962, 1)
@@ -100,11 +105,28 @@ albedo_texture = ExtResource("13_00ujl")
 albedo_color = Color(0.305159, 0.611156, 0.717816, 1)
 albedo_texture = ExtResource("13_00ujl")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiwit"]
-albedo_color = Color(1, 0.52549, 0.0705882, 1)
-albedo_texture = ExtResource("30_qyxfi")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0gfk"]
+albedo_texture = ExtResource("31_bajsd")
 
-[sub_resource type="BoxMesh" id="BoxMesh_pd1fs"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_om7eo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt4xn"]
+albedo_texture = ExtResource("32_gtudn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_33brc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in2nc"]
+albedo_color = Color(0.560955, 0.560955, 0.560955, 1)
+albedo_texture = ExtResource("33_6l3kf")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6p2q0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak8kx"]
+albedo_texture = ExtResource("35_vdcsx")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vq7ec"]
 
 [node name="Level" type="Node3D"]
 
@@ -139,6 +161,9 @@ transform = Transform3D(2.08019, 0, -2.45415, 0, 3.18391, 0, 2.35231, 0, 2.17025
 [node name="box2" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
 transform = Transform3D(0.168447, 0, -3.27138, 0, 3.18391, 0, 3.13563, 0, 0.17574, -0.610845, -13.8054, -10.7404)
 
+[node name="box9" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
+transform = Transform3D(0.0307054, 0, -9.52051, 0, 8.68895, 0, 0.571579, 0, 0.511446, 18.091, -11.2156, -7.6874)
+
 [node name="box3" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
 transform = Transform3D(-0.33483, 0, -3.25742, 0, 3.18391, 0, 3.12225, 0, -0.349326, -2.90143, -10.6412, -10.7404)
 
@@ -147,6 +172,15 @@ transform = Transform3D(-0.33483, 0, -3.25742, 0, 3.18391, 0, 3.12225, 0, -0.349
 
 [node name="box5" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
 transform = Transform3D(0.784851, 0, -3.17212, 0, 3.18391, 0, 3.04049, 0, 0.818831, -17.3931, -10.5854, -9.63751)
+
+[node name="box6" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
+transform = Transform3D(0.516127, 0, -2.08563, 0, 2.094, 0, 1.99946, 0, 0.538371, -19.0005, -14.4751, 11.5764)
+
+[node name="box7" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
+transform = Transform3D(-0.771713, 0, -1.27409, 0, 1.465, 0, 1.22167, 0, -0.804825, -19.4105, -12.8101, 2.6584)
+
+[node name="box8" parent="House For Digi Tech" instance=ExtResource("4_stg3j")]
+transform = Transform3D(-1.09749, 0, -1.81179, 0, 2.083, 0, 1.7374, 0, -1.14449, -19.3038, -14.4751, 2.6584)
 
 [node name="Things" type="Node3D" parent="."]
 
@@ -360,18 +394,11 @@ lights = NodePath("../Lights7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39558, 2.12809, -12.9329)
-visible = false
 omni_range = 4096.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229463, 2.12809, -12.9329)
-visible = false
 omni_range = 4096.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.61172, 0, 0, 0, 4.62591, 0, 0, 0, 0.336257, 7.1298, -2.14234, -15.5328)
-material_override = SubResource("StandardMaterial3D_tiwit")
-mesh = SubResource("BoxMesh_pd1fs")
 
 [node name="Lights2" type="Node3D" parent="."]
 
@@ -405,3 +432,39 @@ transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, -0.82585
 
 [node name="lightbulb12" parent="Lights7" instance=ExtResource("16_5w606")]
 transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.98093, -0.202046, -8.11562)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.44911, 0, 0, 0, 1, 0, 0, 0, 6.54361, -1.61755, 0.698165, -11.7644)
+material_override = SubResource("StandardMaterial3D_u0gfk")
+mesh = SubResource("PlaneMesh_om7eo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.35689, 0, 0, 0, 1, 0, 0, 0, 2.92814, -8.56746, 0.702297, -8.17552)
+material_override = SubResource("StandardMaterial3D_lt4xn")
+mesh = SubResource("PlaneMesh_33brc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-12.7847, 8.74227e-08, 0, -1.11768e-06, -0.999999, 0, 0, 0, 6.90626, 0, 5.35195, -11.7087)
+material_override = SubResource("StandardMaterial3D_in2nc")
+mesh = SubResource("PlaneMesh_6p2q0")
+
+[node name="doorbell" parent="." node_paths=PackedStringArray("door") instance=ExtResource("34_4oomu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.40439, 2.15463, -4.2191)
+door = NodePath("../Doors/Door3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(11.0108, 0, 0, 0, 4.88, 0, 0, 0, 6.84971, -1.07077, -4.3913, -11.7366)
+material_override = SubResource("StandardMaterial3D_ak8kx")
+mesh = SubResource("PlaneMesh_vq7ec")
+
+[node name="blood_decal" parent="." instance=ExtResource("35_q7hen")]
+transform = Transform3D(0.850915, 0, 0, 0, 1, 0, 0, 0, 3.60177, -10.3083, -4.49493, -6.38207)
+size = Vector3(3, 1, 1)
+
+[node name="blood_decal2" parent="." instance=ExtResource("35_q7hen")]
+transform = Transform3D(0.850915, 0, 0, 0, 1, 0, 0, 0, 3.60177, -10.2242, -4.0255, -9.74167)
+size = Vector3(3, 1, 1)
+
+[node name="blood_decal3" parent="." instance=ExtResource("35_q7hen")]
+transform = Transform3D(0.317339, 0, -3.34193, 0, 1, 0, 0.789526, 0, 1.34324, -6.27165, -3.96346, -5.49404)
+size = Vector3(3, 1, 1)

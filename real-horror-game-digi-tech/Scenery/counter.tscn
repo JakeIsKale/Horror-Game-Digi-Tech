@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=4 uid="uid://rd0yuwqsjd6k"]
+[gd_scene load_steps=47 format=4 uid="uid://rd0yuwqsjd6k"]
 
 [ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="1_mj4s6"]
 [ext_resource type="Texture2D" uid="uid://b0y8dxk4ky7p5" path="res://Textures/stone.jpg" id="2_ge5ll"]
 [ext_resource type="Texture2D" uid="uid://dekfcexj1cdrn" path="res://Textures/flat-lay-metal-surface.jpg" id="3_ffntl"]
+[ext_resource type="Texture2D" uid="uid://bbu0drjayvif6" path="res://Textures/WoodFloor052_2K-PNG/WoodFloor052_2K-PNG_Color.png" id="3_t1h3x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb0h4"]
 albedo_color = Color(0.85098, 0.384314, 0.34902, 1)
@@ -188,9 +189,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o3sr0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuudy"]
-albedo_color = Color(1.34766e-06, 0.919334, 0.986937, 1)
-albedo_texture = ExtResource("1_mj4s6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7odfq"]
+albedo_texture = ExtResource("3_t1h3x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj6dh"]
 resource_name = "Material.003"
@@ -303,6 +303,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8wmjg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_criwf"]
+albedo_texture = ExtResource("3_t1h3x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nugk5"]
 resource_name = "Material.004"
@@ -461,7 +464,7 @@ skeleton = NodePath("")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Drawerleft"]
 transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, -1.25238)
-material_override = SubResource("StandardMaterial3D_fuudy")
+material_override = SubResource("StandardMaterial3D_7odfq")
 mesh = SubResource("ArrayMesh_j76cr")
 skeleton = NodePath("")
 
@@ -481,7 +484,7 @@ skeleton = NodePath("")
 
 [node name="Cube_004" type="MeshInstance3D" parent="Drawerright"]
 transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, 1.25773)
-material_override = SubResource("StandardMaterial3D_fuudy")
+material_override = SubResource("StandardMaterial3D_criwf")
 mesh = SubResource("ArrayMesh_imk3t")
 skeleton = NodePath("")
 

@@ -1,28 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddpp436st25jr"]
+[gd_scene load_steps=13 format=3 uid="uid://ddpp436st25jr"]
 
 [ext_resource type="Script" path="res://Scenery/door.gd" id="1_ywmrl"]
-[ext_resource type="Texture2D" uid="uid://5b3j61ctgvp2" path="res://Textures/—Pngtree—exquisite walnut wood texture_13388650.jpg" id="2_s1d18"]
-[ext_resource type="Texture2D" uid="uid://b6fwwgv1vqeg5" path="res://Textures/metal fridge texture 1.jpg" id="3_rfn4y"]
+[ext_resource type="Texture2D" uid="uid://bbeo24kc7xnv1" path="res://Textures/Planks039_2K-PNG/Planks039_2K-PNG_Color.png" id="2_sfwyv"]
+[ext_resource type="Texture2D" uid="uid://dxgrklwn1kmam" path="res://Textures/Metal049A_2K-PNG/Metal049A_2K-PNG_Displacement.png" id="3_ai7gl"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jttft"]
-albedo_color = Color(0.908877, 0.563168, 0.132767, 1)
-albedo_texture = ExtResource("2_s1d18")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33ig4"]
+albedo_texture = ExtResource("2_sfwyv")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jk4ni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ahkw5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc2m1"]
-albedo_color = Color(0.947265, 0.353565, 0, 1)
-albedo_texture = ExtResource("3_rfn4y")
-metallic = 0.58
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcebi"]
+albedo_color = Color(0.89389, 0.89389, 0, 1)
+albedo_texture = ExtResource("3_ai7gl")
+metallic = 1.0
+roughness = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1jpt6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxru0"]
-albedo_color = Color(0.941233, 0.382195, 0, 1)
-albedo_texture = ExtResource("3_rfn4y")
-metallic = 0.53
 
 [sub_resource type="Animation" id="Animation_gt3g2"]
 length = 0.001
@@ -84,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.866741, 0, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="hinge"]
 transform = Transform3D(1.73189, 0, 0, 0, 2.50201, 0, 0, 0, 0.256402, 0.866741, 0.147402, 0)
-material_override = SubResource("StandardMaterial3D_jttft")
+material_override = SubResource("StandardMaterial3D_33ig4")
 mesh = SubResource("BoxMesh_jk4ni")
 skeleton = NodePath("../..")
 
@@ -98,19 +94,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.866741, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.2, 0, 0, 0, 1.11728e-08, 0.2, 0, -0.255603, 8.74228e-09, 0.640797, 0, 0)
-material_override = SubResource("StandardMaterial3D_hc2m1")
+material_override = SubResource("StandardMaterial3D_kcebi")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.264857, 0, 0, 0, 2.02272e-09, 0.234492, 0, -0.0462744, 1.025e-08, 0.640797, 0, -0.292063)
-material_override = SubResource("StandardMaterial3D_hc2m1")
+material_override = SubResource("StandardMaterial3D_kcebi")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="hinge/Knob"]
 transform = Transform3D(-0.264857, 0, 0, 0, 2.02272e-09, 0.234492, 0, -0.0462744, 1.025e-08, 0.640797, 0, 0.283686)
-material_override = SubResource("StandardMaterial3D_nxru0")
+material_override = SubResource("StandardMaterial3D_kcebi")
 mesh = SubResource("CylinderMesh_1jpt6")
 skeleton = NodePath("../../..")
 

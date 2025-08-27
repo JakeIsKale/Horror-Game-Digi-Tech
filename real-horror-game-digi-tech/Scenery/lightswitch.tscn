@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3wqur5o2u42c"]
+[gd_scene load_steps=10 format=3 uid="uid://b3wqur5o2u42c"]
 
 [ext_resource type="Script" path="res://Scripts/lightswitch.gd" id="1_rl32u"]
+[ext_resource type="Texture2D" uid="uid://clrdbf24v1gqo" path="res://Textures/Metal060C_2K-PNG/Metal060C_2K-PNG_Color.png" id="2_xqr6u"]
+[ext_resource type="Texture2D" uid="uid://r6vtr74wnjh8" path="res://Textures/Metal060C_2K-PNG/Metal060C_2K-PNG_Metalness.png" id="3_q7rnw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpulx"]
 emission_enabled = true
@@ -9,7 +11,13 @@ emission = Color(0.751886, 1, 0.468495, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwy2p"]
 roughness = 0.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3psu"]
+albedo_texture = ExtResource("2_xqr6u")
+
 [sub_resource type="BoxMesh" id="BoxMesh_lrrr7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3y7t"]
+albedo_texture = ExtResource("3_q7rnw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jy2yv"]
 size = Vector3(0.665161, 1, 0.525757)
@@ -21,10 +29,12 @@ off_mat = SubResource("StandardMaterial3D_vwy2p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.635598, 0, 0, 0, 1, 0, 0, 0, 0.248646, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_u3psu")
 mesh = SubResource("BoxMesh_lrrr7")
 
 [node name="off" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.304249, 0, 0, 0, 0.322583, -0.128453, 0, 0.194633, 0.212896, 0, 0.118207, 0.162762)
+material_override = SubResource("StandardMaterial3D_b3y7t")
 mesh = SubResource("BoxMesh_lrrr7")
 
 [node name="on" type="MeshInstance3D" parent="."]
