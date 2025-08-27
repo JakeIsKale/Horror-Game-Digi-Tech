@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var SPEED = 3.5
 const JUMP_VELOCITY = 4.5
 
 var crouching = false
@@ -9,11 +9,16 @@ var crouching = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("crouch"):
 		crouching = !crouching
+	if crouching and SPEED != 1.25:
+		SPEED = 2.5
+	if !crouching and SPEED != 3.5:
+		SPEED = 2.5
+
 
 func _physics_process(delta: float) -> void:
 	if crouching and $CollisionShape3D.shape.height > 0.25:
 		var crouch_height = lerp($collisionShape3D.shape.height, 0.25, 0.2)
-		$CollisionShape3D.shape.height = crouch_height
+		$CollisionShape3D.shape.weight = crouch_height
 	if !crouching and $CollisionShape3D.shape.height < 2.0:
 		var crouch_height = lerp($collisionShape3D.shape.height, 2.0, 0.2)
 		$CollisionShape3D.shape.height = crouch_height

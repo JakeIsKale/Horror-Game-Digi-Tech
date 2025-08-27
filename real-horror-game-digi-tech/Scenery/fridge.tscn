@@ -158,21 +158,6 @@ shadow_mesh = SubResource("ArrayMesh_ukajl")
 [sub_resource type="BoxShape3D" id="BoxShape3D_oubrr"]
 size = Vector3(2.36493, 8.15703, 4.85718)
 
-[sub_resource type="Animation" id="Animation_ku3ly"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-3.14159, 0, 0), Vector3(-3.14159, -1.98968, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_lpvck"]
 length = 0.001
 tracks/0/type = "value"
@@ -186,6 +171,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-3.14159, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ku3ly"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.14159, 0, 0), Vector3(-3.14159, -1.98968, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ijf05"]
@@ -297,21 +297,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2vsm7")
 
-[sub_resource type="Animation" id="Animation_s3y0h"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-3.14159, 0, 0), Vector3(-3.14159, 1.98968, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_du7lq"]
 length = 0.001
 tracks/0/type = "value"
@@ -325,6 +310,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-3.14159, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s3y0h"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.14159, 0, 0), Vector3(-3.14159, 1.98968, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o1pc1"]
@@ -342,7 +342,7 @@ mesh = SubResource("ArrayMesh_8oq04")
 skeleton = NodePath("")
 
 [node name="hinge" type="Node3D" parent="."]
-transform = Transform3D(0.278427, 0, 0, 0, -3.7435, -9.05368e-08, 0, 3.27267e-07, -1.03562, 0.932784, 0.044693, 2.04235)
+transform = Transform3D(0.278427, 0, 0, 0, -3.7435, 2.62548e-06, 0, -9.49045e-06, -1.03562, 0.932784, 0.044693, 2.04235)
 script = ExtResource("2_ti46h")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="hinge"]
@@ -375,7 +375,7 @@ libraries = {
 }
 
 [node name="hinge2" type="Node3D" parent="."]
-transform = Transform3D(0.278427, 0, 0, 0, -3.7435, -9.05368e-08, 0, 3.27267e-07, -1.03562, 0.932784, 0.044693, -2.09904)
+transform = Transform3D(0.278427, 0, 0, 0, -3.7435, 2.62548e-06, 0, -9.49045e-06, -1.03562, 0.932784, 0.044693, -2.09904)
 script = ExtResource("2_ti46h")
 
 [node name="Cylinder" type="MeshInstance3D" parent="hinge2"]

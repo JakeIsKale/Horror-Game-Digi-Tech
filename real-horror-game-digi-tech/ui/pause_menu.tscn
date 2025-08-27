@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cynfo1aap3bmk"]
+
+[node name="pause_menu" type="CanvasLayer"]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 481.0
+offset_bottom = 650.0
+color = Color(0.658951, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 464.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 481.0
+offset_bottom = 257.0
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "	  PAUSED
+	"
+
+[node name="resume" type="Button" parent="."]
+offset_left = 124.0
+offset_top = 127.0
+offset_right = 352.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 50
+text = "Resume
+"
+
+[node name="settings" type="Button" parent="."]
+offset_left = 121.0
+offset_top = 221.0
+offset_right = 349.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 50
+text = "Settings
+"
+
+[node name="controls" type="Button" parent="."]
+offset_left = 119.0
+offset_top = 303.0
+offset_right = 347.0
+offset_bottom = 411.0
+theme_override_font_sizes/font_size = 50
+text = "Controls"
+
+[node name="main_menu" type="Button" parent="."]
+offset_left = 91.0
+offset_top = 388.0
+offset_right = 371.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+
+[node name="quit_game" type="Button" parent="."]
+offset_left = 83.0
+offset_top = 488.0
+offset_right = 363.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
