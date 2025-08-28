@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://caikd5h152jsg"]
+
+[ext_resource type="Texture2D" uid="uid://bbeo24kc7xnv1" path="res://Textures/Planks039_2K-PNG/Planks039_2K-PNG_Color.png" id="1_wbhhg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wstl3"]
+albedo_color = Color(0.12202, 0.015949, 0.999987, 1)
+metallic = 1.0
+roughness = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_115qi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xugfx"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23w54"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy7u4"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt0w0"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2puei"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6tq3"]
+albedo_texture = ExtResource("1_wbhhg")
+
+[node name="Window" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.119612, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_wstl3")
+transparency = 0.41
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0773212, 0, 0, 0, 1, 0, 0, 0, 0.170321, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xugfx")
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0773212, 0, 0, 0, 1, 0, 0, 0, 0.170321, 0.462239, 0, 0)
+material_override = SubResource("StandardMaterial3D_23w54")
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0773212, 0, 0, 0, 1, 0, 0, 0, 0.170321, -0.462126, 0, 0)
+material_override = SubResource("StandardMaterial3D_oy7u4")
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.37982e-09, -1, 0, 0.0773212, -4.37114e-08, 0, 0, 0, 0.170321, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_jt0w0")
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.37982e-09, -1, 0, 0.0773212, -4.37114e-08, 0, 0, 0, 0.170321, 0, 0.532592, 0)
+material_override = SubResource("StandardMaterial3D_2puei")
+mesh = SubResource("BoxMesh_115qi")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.37982e-09, -1, 0, 0.0773212, -4.37114e-08, 0, 0, 0, 0.170321, 0, -0.534136, 0)
+material_override = SubResource("StandardMaterial3D_m6tq3")
+mesh = SubResource("BoxMesh_115qi")

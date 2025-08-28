@@ -17,10 +17,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if crouching and $CollisionShape3D.shape.height > 0.25:
-		var crouch_height = lerp($collisionShape3D.shape.height, 0.25, 0.2)
-		$CollisionShape3D.shape.weight = crouch_height
+		var crouch_height = lerp($CollisionShape3D.shape.height, 0.25, 0.2)
+		$CollisionShape3D.shape.height = crouch_height
 	if !crouching and $CollisionShape3D.shape.height < 2.0:
-		var crouch_height = lerp($collisionShape3D.shape.height, 2.0, 0.2)
+		var crouch_height = lerp($CollisionShape3D.shape.height, 2.0, 0.2)
 		$CollisionShape3D.shape.height = crouch_height
 	# Add the gravity.
 	if not is_on_floor():

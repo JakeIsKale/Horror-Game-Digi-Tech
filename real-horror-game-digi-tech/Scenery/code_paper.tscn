@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg3yvxqimnxej"]
+
+[ext_resource type="Script" path="res://Scripts/code_paper.gd" id="1_8g88n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_etoui"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f1t7k"]
+width = 757
+height = 932
+as_normal_map = true
+noise = SubResource("FastNoiseLite_etoui")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0d3di"]
+albedo_color = Color(0.485703, 0.485704, 0.485703, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_f1t7k")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7i5h2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyhoh"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_paqwv"]
+text = "0000"
+depth = 0.001
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bh31"]
+
+[node name="code_paper" type="RigidBody3D"]
+script = ExtResource("1_8g88n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.455698, 0, 0, 0, -1.12706e-08, 1, 0, -0.257841, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0d3di")
+mesh = SubResource("QuadMesh_7i5h2")
+
+[node name="code_text" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0.000121608, 0)
+material_override = SubResource("StandardMaterial3D_vyhoh")
+mesh = SubResource("TextMesh_paqwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.484658, 0, 0, 0, 0.0456044, 0, 0, 0, 0.282736, 0, 0, 0)
+shape = SubResource("BoxShape3D_2bh31")

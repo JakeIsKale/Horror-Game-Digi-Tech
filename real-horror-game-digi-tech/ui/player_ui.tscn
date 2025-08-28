@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://j1kahkbyylgm"]
+[gd_scene load_steps=6 format=3 uid="uid://j1kahkbyylgm"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_d4yya"]
 [ext_resource type="PackedScene" uid="uid://cynfo1aap3bmk" path="res://ui/pause_menu.tscn" id="2_8crvd"]
 [ext_resource type="PackedScene" uid="uid://d50ixawjish8" path="res://ui/task_ui.tscn" id="2_qeubt"]
+[ext_resource type="PackedScene" uid="uid://dlc6ypqqfu0mn" path="res://ui/safe_ui.tscn" id="3_ona5b"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_so3ly"]
 
@@ -28,10 +29,15 @@ texture = SubResource("CanvasTexture_so3ly")
 
 [node name="task_ui" parent="." instance=ExtResource("2_qeubt")]
 
+[node name="safe_ui" parent="." instance=ExtResource("3_ona5b")]
+
 [node name="pause_menu" parent="." instance=ExtResource("2_8crvd")]
 visible = false
 
+[connection signal="pressed" from="safe_ui/confirm" to="." method="confirm_password"]
+[connection signal="pressed" from="safe_ui/back" to="." method="exit_safe"]
 [connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
 [connection signal="pressed" from="pause_menu/quit_game" to="." method="quit_game"]
 
+[editable path="safe_ui"]
 [editable path="pause_menu"]
