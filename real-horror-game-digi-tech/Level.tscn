@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://dhlshy2krv8sq"]
 
-[ext_resource type="Texture2D" uid="uid://b5k175b03ijwk" path="res://icon.svg" id="1_vgs3f"]
+[ext_resource type="Texture2D" uid="uid://dy7lbouq5wsud" path="res://Textures/Grass004_2K-PNG/Grass004_2K-PNG_Color.png" id="1_5rk1n"]
 [ext_resource type="PackedScene" uid="uid://c20eak1n2lpq3" path="res://Player.tscn" id="2_gxwfo"]
 [ext_resource type="PackedScene" uid="uid://bqj10ukgsq55n" path="res://Scenery/house_for_digi_tech.tscn" id="3_lklqb"]
 [ext_resource type="PackedScene" uid="uid://cdxohbwwdp43s" path="res://Scenery/box.tscn" id="4_stg3j"]
@@ -80,9 +80,9 @@ volumetric_fog_temporal_reprojection_amount = 0.856
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpry0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4vo"]
-albedo_texture = ExtResource("1_vgs3f")
-uv1_scale = Vector3(3, 2, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h02to"]
+albedo_texture = ExtResource("1_5rk1n")
+uv1_scale = Vector3(6.085, 6.085, 6.085)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ik7mk"]
 
@@ -136,15 +136,26 @@ albedo_texture = ExtResource("13_00ujl")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7om8o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="grass" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass"]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
 shape = SubResource("BoxShape3D_jpry0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0.235181, 0)
-material_override = SubResource("StandardMaterial3D_7l4vo")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0.235181, 2.1842)
+material_override = SubResource("StandardMaterial3D_h02to")
+mesh = SubResource("BoxMesh_ik7mk")
+
+[node name="grass2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass2"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 0, 0)
+shape = SubResource("BoxShape3D_jpry0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, 0, 1.86291, 2.1842)
+material_override = SubResource("StandardMaterial3D_h02to")
 mesh = SubResource("BoxMesh_ik7mk")
 
 [node name="Player" parent="." instance=ExtResource("2_gxwfo")]
@@ -451,10 +462,12 @@ lights = NodePath("../Lights7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39558, 2.12809, -12.9329)
+visible = false
 omni_range = 4096.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229463, 2.12809, -12.9329)
+visible = false
 omni_range = 4096.0
 
 [node name="Lights2" type="Node3D" parent="."]
@@ -497,14 +510,15 @@ transform = Transform3D(0.144017, 0, 0, 0, 0.164579, 0, 0, 0, 0.119836, 5.98093,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.40439, 2.15463, -4.2191)
 door = NodePath("../Doors/Door3")
 
-[node name="code_paper" parent="." instance=ExtResource("38_20x7s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19934, -8.88064)
+[node name="code_paper" parent="." node_paths=PackedStringArray("positions") instance=ExtResource("38_20x7s")]
+transform = Transform3D(0.0577208, 0, -0.998333, 0, 1, 0, 0.998333, 0, 0.0577208, 1.13157, 1.77606, -14.7215)
+positions = [NodePath("../rand_pos"), NodePath("../rand_pos2"), NodePath("../rand_pos3"), NodePath("../rand_pos4"), NodePath("../rand_pos5"), NodePath("../rand_pos6")]
 
 [node name="rand_pos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0283, 1.222, -6.31289)
 
 [node name="rand_pos2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3161, 1.93643, -16.573)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.3161, 1.93643, -16.573)
 
 [node name="rand_pos3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43566, 1.28845, -15.8617)
@@ -513,7 +527,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43566, 1.28845, -15.8617)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60276, 1.81869, -7.9478)
 
 [node name="rand_pos5" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8866, -3.67511, -8.30991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8866, -3.47243, -8.30991)
 
 [node name="rand_pos6" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28492, -3.01635, -14.5493)

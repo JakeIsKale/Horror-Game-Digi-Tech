@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://j1kahkbyylgm"]
+[gd_scene load_steps=7 format=3 uid="uid://j1kahkbyylgm"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_d4yya"]
 [ext_resource type="PackedScene" uid="uid://cynfo1aap3bmk" path="res://ui/pause_menu.tscn" id="2_8crvd"]
@@ -7,7 +7,10 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_so3ly"]
 
-[node name="player_ui" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_71sdj"]
+font_size = 30
+
+[node name="player_ui" type="Control" node_paths=PackedStringArray("prompt")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -16,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d4yya")
+prompt = NodePath("CanvasLayer/Label")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -26,6 +30,24 @@ offset_bottom = 242.0
 [node name="Crosshair" type="TextureRect" parent="CanvasLayer/CenterContainer"]
 layout_mode = 2
 texture = SubResource("CanvasTexture_so3ly")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -38.5
+offset_right = 33.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "'E'"
+label_settings = SubResource("LabelSettings_71sdj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="task_ui" parent="." instance=ExtResource("2_qeubt")]
 

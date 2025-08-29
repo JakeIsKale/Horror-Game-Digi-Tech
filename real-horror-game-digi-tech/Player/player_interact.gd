@@ -1,14 +1,14 @@
 extends RayCast3D
 
 @onready var crosshair = get_parent().get_parent().get_node("player_ui/CanvasLayer/Crosshair")
-@onready var player_ui = get_parent().get_parent().get_node("player_ui")
+@export var player_ui: Node
 
 func _physics_process(delta: float) -> void:
 	if is_colliding():
 		var hit = get_collider()
 		if hit.name == "safe":
-			if !crosshair.visible:
-				crosshair.visible = true
+			if not player_ui.prompt.visible:
+				player_ui.prompt.visible = true
 			if Input.is_action_just_pressed("interact"):
 				player_ui.open_safe_password()
 		elif hit.name == "lightswitch" and Input.is_action_just_pressed("interact"):
@@ -22,3 +22,6 @@ func _physics_process(delta: float) -> void:
 		elif hit.name == "doorbell":
 			if Input.is_action_just_pressed("interact"):
 				hit.get_parent().ring_bell()
+		else:
+			if player_ui.prompt.visible:
+				player_ui.prompt.visible = false

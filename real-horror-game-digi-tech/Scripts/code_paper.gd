@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Node3D
 
 @export var positions: Array[Node3D]
 @onready var rng = RandomNumberGenerator.new()
@@ -6,4 +6,5 @@ extends RigidBody3D
 func _ready() -> void:
 	var chance = rng.randi_range(0, positions.size() - 1)
 	global_transform.origin = positions[chance].global_transform.origin
-	visible = false
+	print (str(chance))
+	#visible = false

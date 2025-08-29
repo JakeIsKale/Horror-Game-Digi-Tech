@@ -1,12 +1,14 @@
 extends Control
 
-@onready var safe_anim = get_tree().current_scene.get_node("Level/safe/AnimationPlayer")
+@onready var safe_anim = get_node("/root/Level/Furniture/safe/AnimationPlayer")
 @onready var rng = RandomNumberGenerator.new()
 @onready var code_paper = get_tree().current_scene.get_node("code_paper")
 var safe_password
 var safe_interactable = true
+@export var prompt: Label
 
 func _ready() -> void:
+	print(safe_anim)
 	$safe_ui.visible = false
 	$pause_menu.visible = false 
 	set_task("Ring the door bell")
