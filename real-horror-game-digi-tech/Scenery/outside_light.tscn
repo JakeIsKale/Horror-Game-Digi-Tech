@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu63tl1j7m36a"]
+
+[ext_resource type="Texture2D" uid="uid://bpix4txx6bijr" path="res://Textures/Metal046B_2K-PNG/Metal046B_2K-PNG_Color.png" id="1_evbv0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2ho6"]
+albedo_texture = ExtResource("1_evbv0")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1ywg5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wl4y"]
+emission_enabled = true
+emission = Color(0.952817, 0.661409, 0.275102, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_87trl"]
+
+[node name="outside_light" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.176798, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_c2ho6")
+mesh = SubResource("CylinderMesh_1ywg5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.808096, 0, 0, 0, 0.597304, 0, 0, 0, 0.820342, 0.00457793, -0.189941, -0.00277013)
+material_override = SubResource("StandardMaterial3D_2wl4y")
+mesh = SubResource("SphereMesh_87trl")
