@@ -308,33 +308,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8wmjg")
 
-[sub_resource type="Animation" id="Animation_ibuv4"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.4, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Drawerright:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.4, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ws0n1"]
 length = 0.001
 tracks/0/type = "value"
@@ -360,6 +333,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ibuv4"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.4, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Drawerright:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.4, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7at1"]
@@ -477,21 +477,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q6w62")
 
-[sub_resource type="Animation" id="Animation_8rxe2"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-
 [sub_resource type="Animation" id="Animation_fsp4i"]
 length = 0.001
 tracks/0/type = "value"
@@ -505,6 +490,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8rxe2"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_og60k"]
@@ -564,7 +564,7 @@ skeleton = NodePath("")
 script = ExtResource("3_obrvi")
 
 [node name="Cube_003" type="MeshInstance3D" parent="Drawerleft"]
-transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, -1.25238)
+transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.308221, 0.132028, -1.25238)
 material_override = SubResource("StandardMaterial3D_7odfq")
 mesh = SubResource("ArrayMesh_j76cr")
 skeleton = NodePath("")
@@ -576,13 +576,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00008, 0.00175464, -0.00180054
 shape = SubResource("BoxShape3D_q15f7")
 
 [node name="Cylinder" type="MeshInstance3D" parent="Drawerleft"]
-transform = Transform3D(0, -0.0830205, 0, -0.1, 0, 0, 0, 0, 0.1, -1.33972, 0.121419, -1.26099)
+transform = Transform3D(0, -0.0830205, 0, -0.1, 0, 0, 0, 0, 0.1, -1.43472, 0.121419, -1.26099)
 material_override = SubResource("StandardMaterial3D_oprg8")
 mesh = SubResource("ArrayMesh_4n14u")
 skeleton = NodePath("")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="Drawerleft"]
-transform = Transform3D(0, -0.0588778, 0, -0.121279, 0, 0, 0, 0, 0.121279, -1.44977, 0.121419, -1.26099)
+transform = Transform3D(0, -0.0588778, 0, -0.121279, 0, 0, 0, 0, 0.121279, -1.54477, 0.121419, -1.26099)
 material_override = SubResource("StandardMaterial3D_oprg8")
 mesh = SubResource("ArrayMesh_x5m10")
 skeleton = NodePath("")
@@ -596,7 +596,7 @@ libraries = {
 script = ExtResource("3_obrvi")
 
 [node name="Cube_004" type="MeshInstance3D" parent="Drawerright"]
-transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.21322, 0.132028, 1.25773)
+transform = Transform3D(1.06955, 0, 0, 0, 0.535604, 0, 0, 0, 1.16312, -0.308221, 0.132028, 1.25773)
 material_override = SubResource("StandardMaterial3D_criwf")
 mesh = SubResource("ArrayMesh_imk3t")
 skeleton = NodePath("")
@@ -608,13 +608,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.00008, 0.00175464, -0.00180054
 shape = SubResource("BoxShape3D_q15f7")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="Drawerright"]
-transform = Transform3D(0, -0.0588778, 0, -0.121279, 0, 0, 0, 0, 0.121279, -1.44977, 0.121419, 1.28868)
+transform = Transform3D(0, -0.0588778, 0, -0.121279, 0, 0, 0, 0, 0.121279, -1.54477, 0.121419, 1.28868)
 material_override = SubResource("StandardMaterial3D_oprg8")
 mesh = SubResource("ArrayMesh_i51au")
 skeleton = NodePath("")
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="Drawerright"]
-transform = Transform3D(0, -0.0830205, 0, -0.1, 0, 0, 0, 0, 0.1, -1.33972, 0.121419, 1.28868)
+transform = Transform3D(0, -0.0830205, 0, -0.1, 0, 0, 0, 0, 0.1, -1.43472, 0.121419, 1.28868)
 material_override = SubResource("StandardMaterial3D_oprg8")
 mesh = SubResource("ArrayMesh_on7q7")
 skeleton = NodePath("")
