@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c20eak1n2lpq3"]
+[gd_scene load_steps=7 format=3 uid="uid://c20eak1n2lpq3"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_w26gw"]
 [ext_resource type="Script" path="res://Player/head.gd" id="2_ufp31"]
 [ext_resource type="Script" path="res://Player/player_interact.gd" id="3_0fd0p"]
-[ext_resource type="Script" path="res://Player/fov.gd" id="3_3iv3x"]
 [ext_resource type="PackedScene" uid="uid://j1kahkbyylgm" path="res://ui/player_ui.tscn" id="4_akv5o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfcs7"]
@@ -25,18 +24,13 @@ mesh = SubResource("CapsuleMesh_vgyue")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0425731, 0.505199, 0.0165184)
 script = ExtResource("2_ufp31")
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
-script = ExtResource("3_3iv3x")
-
 [node name="RayCast3D" type="RayCast3D" parent="Head" node_paths=PackedStringArray("player_ui")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.460366)
 target_position = Vector3(0, -1.5, 0)
 script = ExtResource("3_0fd0p")
 player_ui = NodePath("../../player_ui")
 
-[node name="Flashlight" type="SpotLight3D" parent="Head"]
-shadow_enabled = true
-spot_range = 15.0
-spot_angle = 24.0
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.936365, 0, 0, 0, 1, 0, 0, -0.338832)
 
 [node name="player_ui" parent="." instance=ExtResource("4_akv5o")]
