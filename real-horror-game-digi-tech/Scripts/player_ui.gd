@@ -8,6 +8,7 @@ var safe_interactable = true
 @export var prompt: Label
 
 func _ready() -> void:
+	$fade_ui/AnimationPlayer.play("fade")
 	print(safe_anim)
 	$safe_ui.visible = false
 	$pause_menu.visible = false 
@@ -19,6 +20,8 @@ func _ready() -> void:
 	safe_password = str(p1) + str(p2) + str(p3) + str(p4)
 	code_paper.get_node("code_text").mesh.text = safe_password
 	print(safe_password)
+	await get_tree().create_timer(1.1, false).timeout
+	$fade_ui.visible = false 
 
 func  open_safe_password():
 	if safe_interactable:

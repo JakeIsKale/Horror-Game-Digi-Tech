@@ -1,0 +1,139 @@
+[gd_scene load_steps=15 format=3 uid="uid://cv42urwdjbe4r"]
+
+[ext_resource type="Texture2D" uid="uid://beqy0axywyf6p" path="res://Textures/Metal060C_2K-PNG/Metal060C_2K-PNG_Displacement.png" id="1_0l6je"]
+[ext_resource type="Texture2D" uid="uid://basxh2jf4l7t8" path="res://Textures/Rubber001_2K-PNG/Rubber001_2K-PNG_Color.png" id="2_3tqi3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc6tp"]
+albedo_color = Color(0.517184, 0.517184, 0.517184, 1)
+albedo_texture = ExtResource("1_0l6je")
+
+[sub_resource type="BoxMesh" id="BoxMesh_25qiv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldupp"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_0l6je")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o8hs"]
+albedo_color = Color(0.650128, 0.650128, 0.650128, 1)
+metallic = 0.83
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxsii"]
+metallic = 0.83
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.868965, 0.785649, 0.411342, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ia1p"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 1.0
+roughness = 0.0
+emission = Color(0.868965, 0.785649, 0.411342, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctd30"]
+metallic = 0.83
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.277379, 0.00808245, 0.00803461, 1)
+emission_energy_multiplier = 92.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy4hw"]
+albedo_texture = ExtResource("2_3tqi3")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v7u2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qooia"]
+albedo_texture = ExtResource("2_3tqi3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y78w1"]
+albedo_texture = ExtResource("2_3tqi3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55kmb"]
+albedo_texture = ExtResource("2_3tqi3")
+
+[node name="Car" type="Node3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.22332e-07, 0, 1.63264, 0, 0.71161, 0, -2.79862, 0, -7.13649e-08, -0.00523262, 0, -0.00288482)
+material_override = SubResource("StandardMaterial3D_uc6tp")
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.19477e-08, 0, 1.63264, 0, 0.531412, 0, -1.64597, 0, -7.13649e-08, -0.00523262, 0.611715, -0.00288482)
+material_override = SubResource("StandardMaterial3D_ldupp")
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 1.44985, 0, 0.39894, 0, -0.0667548, 0, -6.33751e-08, -0.00523262, 0.619191, -0.801303)
+material_override = SubResource("StandardMaterial3D_3o8hs")
+transparency = 0.31
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 0.641785, 0, 0.221293, 0, -0.0667548, 0, -2.80533e-08, -0.38536, 0.12299, -1.3971)
+material_override = SubResource("StandardMaterial3D_wxsii")
+transparency = 0.31
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 0.641785, 0, 0.221293, 0, -0.0667548, 0, -2.80533e-08, 0.327168, 0.12299, -1.3971)
+material_override = SubResource("StandardMaterial3D_wxsii")
+transparency = 0.31
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 0.45039, 0, 0.184343, 0, -0.0667548, 0, -1.96872e-08, -0.0111588, -0.141643, -1.3971)
+material_override = SubResource("StandardMaterial3D_2ia1p")
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 0.641785, 0, 0.221293, 0, -0.0667548, 0, -2.80533e-08, -0.38536, 0.12299, 1.37986)
+material_override = SubResource("StandardMaterial3D_ctd30")
+transparency = 0.31
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91794e-09, 0, 0.641785, 0, 0.221293, 0, -0.0667548, 0, -2.80533e-08, 0.327168, 0.12299, 1.37986)
+material_override = SubResource("StandardMaterial3D_ctd30")
+transparency = 0.31
+mesh = SubResource("BoxMesh_25qiv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.08165e-08, 0.079, -3.08165e-08, 0, -3.4532e-09, -0.705, -0.705, -3.4532e-09, 1.34703e-15, -0.826471, -0.262665, -0.956815)
+material_override = SubResource("StandardMaterial3D_xy4hw")
+mesh = SubResource("CylinderMesh_v7u2t")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.08165e-08, 0.079, -3.08165e-08, 0, -3.4532e-09, -0.705, -0.705, -3.4532e-09, 1.34703e-15, -0.858, -0.262665, 0.90917)
+material_override = SubResource("StandardMaterial3D_qooia")
+mesh = SubResource("CylinderMesh_v7u2t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.08165e-08, 0.079, -3.08165e-08, 0, -3.4532e-09, -0.705, -0.705, -3.4532e-09, 1.34703e-15, 0.819891, -0.262665, 0.937521)
+material_override = SubResource("StandardMaterial3D_y78w1")
+mesh = SubResource("CylinderMesh_v7u2t")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.08165e-08, 0.079, -3.08165e-08, 0, -3.4532e-09, -0.705, -0.705, -3.4532e-09, 1.34703e-15, 0.850546, -0.262665, -0.876796)
+material_override = SubResource("StandardMaterial3D_55kmb")
+mesh = SubResource("CylinderMesh_v7u2t")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.769231, 0, 0, 0, 0.769231, 0, 0, 0, 0.769231, 0.342725, 0.121371, -1.12359)
+light_color = Color(0.84239, 0.871678, 0.778055, 1)
+light_energy = 20.0
+spot_range = 30.0
+spot_angle = 28.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.769231, 0, 0, 0, 0.769231, 0, 0, 0, 0.769231, -0.343, 0.121, -1.124)
+light_color = Color(0.84239, 0.871678, 0.778055, 1)
+light_energy = 20.0
+spot_range = 30.0
+spot_angle = 28.0
