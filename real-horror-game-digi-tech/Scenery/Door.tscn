@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddpp436st25jr"]
+[gd_scene load_steps=14 format=3 uid="uid://ddpp436st25jr"]
 
 [ext_resource type="Script" path="res://Scenery/door.gd" id="1_ywmrl"]
 [ext_resource type="Texture2D" uid="uid://bbeo24kc7xnv1" path="res://Textures/Planks039_2K-PNG/Planks039_2K-PNG_Color.png" id="2_sfwyv"]
@@ -72,6 +72,9 @@ _data = {
 "open": SubResource("Animation_a75p7")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tps0i"]
+size = Vector3(1.862, 3.125, 4.004)
+
 [node name="Door" type="Node3D"]
 script = ExtResource("1_ywmrl")
 
@@ -114,3 +117,12 @@ skeleton = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_kmapp")
 }
+
+[node name="ai_trigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ai_trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0345459, 0, -0.0225525)
+shape = SubResource("BoxShape3D_tps0i")
+
+[connection signal="body_entered" from="ai_trigger" to="." method="ai_enable_door"]
+[connection signal="body_exited" from="ai_trigger" to="." method="ai_disable_door"]

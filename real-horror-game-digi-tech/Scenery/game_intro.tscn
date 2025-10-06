@@ -65,6 +65,33 @@ volumetric_fog_temporal_reprojection_amount = 0.856
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_mdoxh"]
 
+[sub_resource type="Animation" id="Animation_3kayv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.965, 0.747, 70)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_camera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.63481, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_jcxkl"]
 resource_name = "cutscene"
 length = 30.0
@@ -91,33 +118,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 1.63481, 0), Vector3(0, 1.63481, 0), Vector3(0, 0.928515, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_3kayv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Car:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-2.965, 0.747, 70)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene_camera:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.63481, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixfxv"]
@@ -427,7 +427,7 @@ transform = Transform3D(-0.71033, 0, 0.117607, 0, 0.72, 0, -0.117607, 0, -0.7103
 transform = Transform3D(-0.878047, 0, 0.145375, 0, 0.89, 0, -0.145375, 0, -0.878047, -10.4367, 2.81387, -13.7824)
 
 [node name="cutscene_camera" type="Camera3D" parent="."]
-transform = Transform3D(-0.0639749, 0, 0.997952, 0, 1, 0, -0.997952, 0, -0.0639749, 7.80844, 1.14813, 21.4256)
+transform = Transform3D(-0.0639699, 0, 0.997952, 0, 1, 0, -0.997952, 0, -0.0639699, 7.80844, 1.14813, 21.4256)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
