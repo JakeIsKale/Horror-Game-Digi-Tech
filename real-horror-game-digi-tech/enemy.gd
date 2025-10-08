@@ -7,17 +7,46 @@ var speed = 3.0
 var destination 
 var chasing = false 
 var destination_value
+var previous_destination_value = -1
+
+var chase_timer = 0.0
 
 func _ready() -> void:
 	pick_destination()
 
 func _process(delta: float) -> void:
+	if chasing:
+		if speed != 3.0:
+			speed = 3.0
+	if chasing:
+		if speed != 5.0:
+			speed = 5.0
+		if chase_timer <15.0:
+			chase_timer += 1 * delta 
+		else:
+			chase_timer = 0 
+			chasing = false 
+			pick_destination()
 	if destination != null:
 		var look_dir = lerp_angle(deg_to_rad(global_rotation_degrees.y), atan2(-velocity.x, -velocity.z), 0.5)
 		global_rotation_degrees.y = rad_to_deg(look_dir) 
 		update_target_location(destination.global_transform.origin)
 
+func chase_player(chasecast: RayCast3D):
+	if chasecast.is_colliding():
+		var hit = chasecast.get_collider()
+		if hit.name == "Player":
+			if !chasing:
+				chasing = true 
+				destination = Player
+
+
 func _physics_process(delta: float) -> void:
+	chase_player($chasecast)
+	chase_player($chasecast2)
+	chase_player($chasecast3)
+	chase_player($chasecast4)
+	chase_player($chasecast5)
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if destination != null:
@@ -29,14 +58,17 @@ func _physics_process(delta: float) -> void:
 
 
 func pick_destination(dont_choose = null):
-	var num = rng.randi_range(0, patrol_destinations.size() - 1)
-	destination_value = num
-	destination = patrol_destinations[num]
-	if destination != null and dont_choose != null and destination == patrol_destinations[dont_choose]:
-		if dont_choose < 1:
-			destination = patrol_destinations[dont_choose + 1]
-		if dont_choose < 0 and dont_choose <= patrol_destinations.size() - 1:
-			destination = patrol_destinations[dont_choose - 1]
+	if !chasing:
+		var num = rng.randi_range(0, patrol_destinations.size() - 1)
+		while num == previous_destination_value and patrol_destinations.size() > 1:
+			num = rng.randi_range(0, patrol_destinations.size() - 1)
+		destination_value = num
+		destination = patrol_destinations[num] 
+		if destination != null and dont_choose != null and destination == patrol_destinations[dont_choose]:
+			if dont_choose < 1:
+				destination = patrol_destinations[dont_choose + 1]
+			if dont_choose < 0 and dont_choose <= patrol_destinations.size() - 1:
+				destination = patrol_destinations[dont_choose - 1]
 
 func update_target_location(target_location):
 	$NavigationAgent3D.target_position = destination.global_transform.origin

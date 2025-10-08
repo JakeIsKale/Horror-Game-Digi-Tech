@@ -1,6 +1,6 @@
 extends Control
 
-@onready var safe_anim = get_node("/root/Level/Furniture/safe/AnimationPlayer")
+@onready var safe_anim = get_node("/root/Level/safe/AnimationPlayer")
 @onready var rng = RandomNumberGenerator.new()
 @onready var code_paper = get_tree().current_scene.get_node("code_paper")
 var safe_password
@@ -32,8 +32,13 @@ func  open_safe_password():
 func confirm_password():
 	if $safe_ui/password.text == safe_password:
 		safe_anim.play("open")
-		safe_interactable = false
+		safe_interactable = true
 		exit_safe()
+		safe_anim.connect("animation_finished", Callable(self, "_on_safe_animation_finished"))
+
+func _on_safe_animation_finished(anim_name):
+	if anim_name == "open":
+		safe_interactable = false
 
 func exit_safe():
 	$safe_ui.visible = false 

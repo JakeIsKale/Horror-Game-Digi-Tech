@@ -7,6 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f6iab"]
 
 [node name="enemy" type="CharacterBody3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 script = ExtResource("1_2abdh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -16,3 +17,23 @@ mesh = SubResource("CapsuleMesh_56f17")
 shape = SubResource("CapsuleShape3D_f6iab")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="chasecast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
+target_position = Vector3(-5, -8, 0)
+
+[node name="chasecast2" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
+target_position = Vector3(0, 14, 0)
+
+[node name="chasecast3" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
+target_position = Vector3(5, -8, 0)
+
+[node name="chasecast4" type="RayCast3D" parent="."]
+transform = Transform3D(-0.290886, -0.956758, 4.18212e-08, 0, -4.37114e-08, -1, 0.956758, -0.290886, 1.2715e-08, 0.286364, 0.250519, 0)
+target_position = Vector3(-5, -8, 0)
+
+[node name="chasecast5" type="RayCast3D" parent="."]
+transform = Transform3D(-0.759305, -0.650734, 2.84445e-08, 0, -4.37114e-08, -1, 0.650734, -0.759305, 3.31903e-08, 0.286364, 0.250519, 0)
+target_position = Vector3(-5, -8, 0)

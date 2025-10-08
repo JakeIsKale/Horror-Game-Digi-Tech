@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkguqum7q6bv4"]
+
+[ext_resource type="Texture2D" uid="uid://bsghwvggcrtvf" path="res://Textures/Money 1001.png" id="1_itiuy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bnvt"]
+albedo_texture = ExtResource("1_itiuy")
+uv1_scale = Vector3(16.53, 21.955, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_25jph"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axd0n"]
+albedo_texture = ExtResource("1_itiuy")
+uv1_scale = Vector3(16.53, 96.535, 1)
+
+[node name="money" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.77347, 0, 0, 0, 1.12661, 0, 0, 0, 2.159, 0, 0.0122398, 0)
+material_override = SubResource("StandardMaterial3D_5bnvt")
+mesh = SubResource("BoxMesh_25jph")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.779, 0, 0, 0, 1.144, 0, 0, 0, 2.16574, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_axd0n")
+mesh = SubResource("BoxMesh_25jph")
