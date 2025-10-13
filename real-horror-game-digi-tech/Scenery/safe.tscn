@@ -629,7 +629,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fy3vj"]
-size = Vector3(2.34998, 2.12231, 2.14429)
+size = Vector3(1.37506, 2.12231, 2.14429)
 
 [node name="safe" type="Node3D"]
 
@@ -739,5 +739,5 @@ libraries = {
 [node name="safe" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="safe"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13739, 0.0428467, -0.0601807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.350068, 0.0428467, -0.0601807)
 shape = SubResource("BoxShape3D_fy3vj")

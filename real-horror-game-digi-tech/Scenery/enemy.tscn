@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs5xfas580i0f"]
+[gd_scene load_steps=5 format=3 uid="uid://cs5xfas580i0f"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_2abdh"]
+[ext_resource type="PackedScene" uid="uid://dpsj77hslfk4s" path="res://Scenery/monster_enemy.tscn" id="2_r0l0r"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_56f17"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f6iab"]
 
 [node name="enemy" type="CharacterBody3D"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(-3.93403e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.93403e-08, 0, 0, 0)
 script = ExtResource("1_2abdh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_56f17")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -22,9 +24,22 @@ shape = SubResource("CapsuleShape3D_f6iab")
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
 target_position = Vector3(-5, -8, 0)
 
+[node name="chasecast6" type="RayCast3D" parent="."]
+transform = Transform3D(0.420371, -0.907352, 3.96616e-08, 1.17643e-22, -4.37114e-08, -1, 0.907352, 0.420371, -1.8375e-08, 0.286364, 0.250519, 0)
+target_position = Vector3(-5, -8, 0)
+
+[node name="chasecast7" type="RayCast3D" parent="."]
+transform = Transform3D(-0.997871, -0.0652115, 2.8505e-09, -1.6594e-15, -4.37114e-08, -1, 0.0652115, -0.997871, 4.36184e-08, 0.286364, 0.250519, 0)
+target_position = Vector3(-5, -8, 0)
+
 [node name="chasecast2" type="RayCast3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
 target_position = Vector3(0, 14, 0)
+
+[node name="killcast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.286364, -0.527277, 8.88178e-16)
+enabled = false
+target_position = Vector3(0, 1.5, 0)
 
 [node name="chasecast3" type="RayCast3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.286364, 0.250519, 0)
@@ -37,3 +52,21 @@ target_position = Vector3(-5, -8, 0)
 [node name="chasecast5" type="RayCast3D" parent="."]
 transform = Transform3D(-0.759305, -0.650734, 2.84445e-08, 0, -4.37114e-08, -1, 0.650734, -0.759305, 3.31903e-08, 0.286364, 0.250519, 0)
 target_position = Vector3(-5, -8, 0)
+
+[node name="monster_enemy" parent="." instance=ExtResource("2_r0l0r")]
+transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, -0.211735, 0)
+
+[node name="upper_left_arm" parent="monster_enemy/body" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, -0.500136, -0.764055)
+
+[node name="upper_right_arm" parent="monster_enemy/body" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, -0.500136, 0.815429)
+
+[node name="lower_right_arm" parent="monster_enemy/body/upper_right_arm" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.962018, -0.272986, 0, 0.272986, 0.962018, 0, 0, 0)
+
+[node name="jumpscare_cam" type="Camera3D" parent="."]
+transform = Transform3D(-4.85682e-08, 0, 1.11111, 0, 1.11111, 0, -1.11111, 0, -4.85682e-08, 0.992809, 0.641848, 0.000739791)
+visible = false
+
+[editable path="monster_enemy"]

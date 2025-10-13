@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkguqum7q6bv4"]
+[gd_scene load_steps=7 format=3 uid="uid://bkguqum7q6bv4"]
 
 [ext_resource type="Texture2D" uid="uid://bsghwvggcrtvf" path="res://Textures/Money 1001.png" id="1_itiuy"]
+[ext_resource type="Script" path="res://Scenery/moneystack.gd" id="1_mkamg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bnvt"]
 albedo_texture = ExtResource("1_itiuy")
@@ -12,7 +13,11 @@ uv1_scale = Vector3(16.53, 21.955, 1)
 albedo_texture = ExtResource("1_itiuy")
 uv1_scale = Vector3(16.53, 96.535, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jstca"]
+size = Vector3(3.00641, 1.17444, 2.36597)
+
 [node name="money" type="Node3D"]
+script = ExtResource("1_mkamg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.77347, 0, 0, 0, 1.12661, 0, 0, 0, 2.159, 0, 0.0122398, 0)
@@ -23,3 +28,9 @@ mesh = SubResource("BoxMesh_25jph")
 transform = Transform3D(2.779, 0, 0, 0, 1.144, 0, 0, 0, 2.16574, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_axd0n")
 mesh = SubResource("BoxMesh_25jph")
+
+[node name="money" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="money"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0168152, 0.0872192, 0.00695801)
+shape = SubResource("BoxShape3D_jstca")

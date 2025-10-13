@@ -11,6 +11,9 @@ func _physics_process(delta: float) -> void:
 				player_ui.prompt.visible = true
 			if Input.is_action_just_pressed("interact"):
 				player_ui.open_safe_password()
+		elif hit.name == "money":
+			if Input.is_action_just_pressed("interact"):
+				hit.get_parent().interact()
 		elif hit.name == "lightswitch" and Input.is_action_just_pressed("interact"):
 			if hit.name == "lightswitch" and Input.is_action_just_pressed("interact"):
 				hit.get_parent().toggle_light()
