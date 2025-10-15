@@ -31,14 +31,14 @@ func _process(delta: float) -> void:
 		if chasing:
 			if $monster_enemy/AnimationPlayer.speed_scale != 2:
 				$monster_enemy/AnimationPlayer.speed_scale = 2
-			if speed != 2.5:
-				speed = 2.5
+			if speed != 1.5:
+				speed = 1.5
 			if chase_timer <15.0:
 				chase_timer += 1 * delta 
 			else:
 				chase_timer = 0 
-				if $killcast.enabled:
-					$killcast.enabled = false  
+				if $killcast/killcast.enabled:
+					$killcast/killcast.enabled = false  
 				chasing = false 
 				pick_destination()
 	if destination != null and !idle:
@@ -47,17 +47,23 @@ func _process(delta: float) -> void:
 		update_target_location(destination.global_transform.origin)
 
 func kill_player():
-	if !$killcast.enabled:
-		$killcast.enabled = true 
+	print("kill_player()")
+	if !$killcast/killcast.enabled:
+		$killcast/killcast.enabled = true 
 	$killcast.look_at(Player.global_transform.origin)
-	if $killcast.is_colliding():
-		var hit = $killcast.get_collider()
+	if $killcast/killcast.is_colliding():
+		var hit = $killcast/killcast.get_collider()
+		print("Hit object name:", hit.name)
 		if hit.name == "Player" and !killed:
-			killed = true 
-			$jumpscare_cam.current = true 
+			print("Player hit — killed set to true")
+			killed = true
+			$jumpscare_cam.current = true
 			$monster_enemy/AnimationPlayer.play("jumpscare")
 			$monster_enemy/AnimationPlayer.speed_scale = 2
 			get_tree().current_scene.get_node("Player").process_mode = Node.PROCESS_MODE_DISABLED
+			await get_tree().create_timer(2.0, false).timeout
+			get_tree().change_scene_to_file("res://Scenery/death.tscn")
+
 
 func chase_player(chasecast: RayCast3D):
 	if chasecast.is_colliding():

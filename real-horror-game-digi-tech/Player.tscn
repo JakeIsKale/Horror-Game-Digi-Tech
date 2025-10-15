@@ -12,6 +12,8 @@
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1.06796, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 17
+collision_mask = 17
 floor_max_angle = 1.18682
 script = ExtResource("1_w26gw")
 
