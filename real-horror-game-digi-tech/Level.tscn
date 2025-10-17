@@ -308,16 +308,6 @@ lights = NodePath("../Lights6")
 transform = Transform3D(-0.578853, 0, 4.43429e-08, 0, 0.533847, 0, -5.06049e-08, 0, -0.507224, -5.38067, -2.85565, -11.4464)
 lights = NodePath("../Lights7")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.39558, 2.12809, -12.9329)
-visible = false
-omni_range = 4096.0
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229463, 2.12809, -12.9329)
-visible = false
-omni_range = 4096.0
-
 [node name="Lights2" type="Node3D" parent="."]
 
 [node name="lightbulb6" parent="Lights2" instance=ExtResource("16_5w606")]
@@ -818,3 +808,7 @@ transform = Transform3D(0.209, 0, 0, 0, 0.263, 0, 0, 0, 0.263, -11.2362, -4.1416
 [node name="scene_change_trigger" parent="." instance=ExtResource("50_8uq3e")]
 transform = Transform3D(1.625, 0, 0, 0, 1.625, 0, 0, 0, 1.625, -4.18096, 1.45072, 7.54694)
 scene_name = "cutscene_ui"
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06451, 0, -10.5917)
+omni_range = 4096.0
